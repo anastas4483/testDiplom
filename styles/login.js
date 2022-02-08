@@ -1,33 +1,9 @@
 import { StyleSheet, Platform } from "react-native"
 import { G } from "react-native-svg"
 
-if(Platform.OS==='web') styleLogin.loginInput['outlineWidth']=0
+// if(Platform.OS==='web') styleLogin.loginInput['outlineWidth']=0
 export const styleLogin = StyleSheet.create({
-  container: {
-    flex: 1,
-    //  paddingTop:20,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  gradient: {
-    flex: 1,
-    width: "100%",
-    paddingTop: 20,
-    top: 0,
-    fontSize: 16,
-    overflow: "hidden",
-  },
-  loginH1: {
-    fontSize: 35,
-    color: "#fff",
-    fontFamily: "sansat_light",
-    paddingBottom: 13,
-  },
-  loginH3: {
-    fontSize: 24,
-    color: "#fff",
-    fontFamily: "sansat_light",
-  },
+
   loginForm: {
     textAlign: "left",
     paddingHorizontal: 40,
@@ -39,8 +15,6 @@ export const styleLogin = StyleSheet.create({
 
   },
   loginInput: {
-   
-    // outlineWidth: 0,
     borderColor: "#fff",
     borderWidth: 0,
     borderBottomWidth: 2,

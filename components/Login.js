@@ -1,37 +1,37 @@
 import { Text, View, Image } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
-import { gStyle } from "../styles/style"
+import { styleLogin } from "../styles/login"
 
 import Form from "./Form"
 import { TextInput } from "react-native-web"
 export default function Login() {
   return (
-    <View style={gStyle.container}>
+    <View style={styleLogin.container}>
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
-        style={gStyle.gradient}
+        style={styleLogin.gradient}
       >
-        <View style={[gStyle.loginCircle, gStyle.loginCircleTop]}>
-          <View style={gStyle.loginWrapLogo}>
+        <View style={[styleLogin.loginCircle, styleLogin.loginCircleTop]}>
+          <View style={styleLogin.loginWrapLogo}>
             <Image
-              style={gStyle.loginLogo}
+              style={styleLogin.loginLogo}
               source={require("../assets/2408025.png")}
             />
-            <Text style={gStyle.loginTitle}>
+            <Text style={styleLogin.loginTitle}>
               Портал справочной {"\n"} информации для {"\n"}студентов {"\n"}ВГТУ
               СПК
             </Text>
           </View>
         </View>
-        <View style={gStyle.loginForm}>
-          <Text style={gStyle.loginH1}>Добрый день!</Text>
-          <Text style={gStyle.loginH3}>Давайте сначала {"\n"}авторизуемся</Text>
+        <View style={styleLogin.loginForm}>
+          <Text style={styleLogin.loginH1}>Добрый день!</Text>
+          <Text style={styleLogin.loginH3}>Давайте сначала {"\n"}авторизуемся</Text>
           <Form />
         </View>
-        {/* <View style={gStyle.loginWrapBottom}> */}
-          <View style={[gStyle.loginCircle, gStyle.loginCircleBottom]}></View>
-          <Text style={gStyle.loginCopy}>
+        {/* <View style={styleLogin.loginWrapBottom}> */}
+          <View style={[styleLogin.loginCircle, styleLogin.loginCircleBottom]}></View>
+          <Text style={styleLogin.loginCopy}>
             &#169; 2022 ФГБОУ ВО «ВГТУ».{"\n"} Все права защищены
           </Text>
         {/* </View> */}

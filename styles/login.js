@@ -1,6 +1,8 @@
 import { StyleSheet, Platform } from "react-native"
+import { G } from "react-native-svg"
 
-export const gStyle = StyleSheet.create({
+if(Platform.OS==='web') styleLogin.loginInput['outlineWidth']=0
+export const styleLogin = StyleSheet.create({
   container: {
     flex: 1,
     //  paddingTop:20,
@@ -37,6 +39,8 @@ export const gStyle = StyleSheet.create({
 
   },
   loginInput: {
+   
+    // outlineWidth: 0,
     borderColor: "#fff",
     borderWidth: 0,
     borderBottomWidth: 2,
@@ -94,17 +98,17 @@ export const gStyle = StyleSheet.create({
     shadowOffset: { height: 9, width: -9 },
     elevation: 20,
     width: Platform.OS === "web" ? "45%" : "90%",
-    height: Platform.OS === "web" ? "90%" : "45%",
+    height: Platform.OS === "web" ? "90%" : 300,
     borderRadius: 500,
   },
   loginCircleTop: {
     justifyContent: "center",
     alignItems: "center",
-    top: Platform.OS === "web" ? "-45%" : "-15%",
+    top: Platform.OS === "web" ? "-45%" : -100,
     left: Platform.OS === "web" ? "75%" : "50%",
   },
   loginCircleBottom: {
-    top: Platform.OS === "web" ? "65%" : "80%",
+    top: Platform.OS === "web" ? "65%" : 600,
     left: Platform.OS === "web" ? "-30%" : "-45%",
   },
   loginWrapLogo: {

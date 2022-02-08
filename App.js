@@ -4,9 +4,10 @@ import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import * as Font from "expo-font"
 import { useState } from "react"
-import { gStyle } from "./styles/style"
+import { gStyle } from "./styles/login"
 
 import Login from "./components/Login"
+import PersRoom from './components/PersRoom'
 
 export default function App() {
   const [font, setFont] = useState(false)
@@ -18,7 +19,7 @@ export default function App() {
     })
 
   if (font) {
-    return <Login />
+    return <PersRoom />
   } else {
     return (
       <AppLoading

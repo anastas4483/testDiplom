@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import * as Font from "expo-font"
 import { useState } from "react"
-import { gStyle } from "../styles/style"
+import { gStyle } from "../styles/login"
 import {BoxShadow} from 'react-native-shadow'
 export default function Form() {
 

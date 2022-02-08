@@ -5,12 +5,13 @@ import { styleLogin } from "../styles/login"
 
 import Form from "./Form"
 import { TextInput } from "react-native-web"
+import { gStyle } from "../styles/gStyle"
 export default function Login() {
   return (
-    <View style={styleLogin.container}>
+    <View style={gStyle.container}>
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
-        style={styleLogin.gradient}
+        style={gStyle.gradient}
       >
         <View style={[styleLogin.loginCircle, styleLogin.loginCircleTop]}>
           <View style={styleLogin.loginWrapLogo}>
@@ -25,8 +26,8 @@ export default function Login() {
           </View>
         </View>
         <View style={styleLogin.loginForm}>
-          <Text style={styleLogin.loginH1}>Добрый день!</Text>
-          <Text style={styleLogin.loginH3}>Давайте сначала {"\n"}авторизуемся</Text>
+          <Text style={gStyle.H1}>Добрый день!</Text>
+          <Text style={gStyle.H3}>Давайте сначала {"\n"}авторизуемся</Text>
           <Form />
         </View>
         {/* <View style={styleLogin.loginWrapBottom}> */}

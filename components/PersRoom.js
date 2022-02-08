@@ -2,15 +2,16 @@ import { Text, View, Image, Touchable } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 import { stylePers } from "../styles/persRoom"
+import { gStyle } from "../styles/gStyle"
 
 import Form from "./Form"
 import { TextInput, TouchableWithoutFeedback } from "react-native-web"
 export default function Login() {
   return (
-    <View style={stylePers.container}>
+    <View style={gStyle.container}>
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
-        style={stylePers.gradient}
+        style={gStyle.gradient}
       >
         <View style={stylePers.persHeader}>
         <Text>

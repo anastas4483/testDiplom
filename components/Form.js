@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import * as Font from "expo-font"
 import { useState } from "react"
-import { gStyle } from "../styles/login"
+import { styleLogin } from "../styles/login"
 import {BoxShadow} from 'react-native-shadow'
 export default function Form() {
 
@@ -23,14 +23,14 @@ export default function Form() {
         }
     }
   return (
-    <View style={gStyle.loginFormWrap}>
-      <TextInput placeholderTextColor='#fff' style={gStyle.loginInput} placeholder="Ваш логин"/>
-      <TextInput placeholderTextColor='#fff' style={gStyle.loginInput} placeholder="Ваш пароль"/>
-      {/* <Button title="Войти" color= '#fff' style={gStyle.loginButton}/> */}
+    <View style={styleLogin.loginFormWrap}>
+      <TextInput placeholderTextColor='#fff' style={styleLogin.loginInput} placeholder="Ваш логин"/>
+      <TextInput placeholderTextColor='#fff' style={styleLogin.loginInput} placeholder="Ваш пароль"/>
+      {/* <Button title="Войти" color= '#fff' style={styleLogin.loginButton}/> */}
      
       {/* <BoxShadow setting={shadowOpt}>  */}
-      <Pressable style={gStyle.loginButton}>
-          <Text style={gStyle.loginButtonText}>
+      <Pressable style={styleLogin.loginButton}>
+          <Text style={styleLogin.loginButtonText}>
               Войти
           </Text>
       </Pressable>

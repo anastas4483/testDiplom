@@ -11,7 +11,7 @@ container: {
   gradient: {
     flex: 1,
     width: "100%",
-    paddingTop: 20,
+    // paddingTop: 20,
     top: 0,
     fontSize: 16,
     overflow: "hidden",
@@ -46,6 +46,22 @@ container: {
     fontFamily: "os_reg",
     fontSize: 18,
     color: "#fff",
+  },
+  persHeader: {
+    width: "100%",
+    backgroundColor: "#355D8B",
+    paddingTop: 35,
+    paddingBottom: 15,
+    justifyContent: "space-between",
+    flexDirection: "row",
+    paddingHorizontal: 10,
+    top: 0,
+    alignItems: "center",
+  },
+  
+  persHeaderGear: {
+    width: 30,
+    height: 30,
   },
 
 })

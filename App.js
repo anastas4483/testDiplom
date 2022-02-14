@@ -8,6 +8,7 @@ import { gStyle } from "./styles/login"
 
 import Login from "./components/Login"
 import PersRoom from './components/PersRoom'
+import ProfilTeacher from "./components/ProfilTeacher"
 
 export default function App() {
   const [font, setFont] = useState(false)
@@ -20,7 +21,7 @@ export default function App() {
     })
 
   if (font) {
-    return <PersRoom />
+    return <ProfilTeacher />
   } else {
     return (
       <AppLoading

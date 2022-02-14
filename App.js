@@ -5,6 +5,10 @@ import AppLoading from "expo-app-loading"
 import * as Font from "expo-font"
 import { useState } from "react"
 import { gStyle } from "./styles/login"
+import { LogBox } from 'react-native';
+
+
+LogBox.ignoreLogs(['Remote debugger']);
 
 import Login from "./components/Login"
 import PersRoom from './components/PersRoom'
@@ -17,7 +21,7 @@ export default function App() {
     Font.loadAsync({
       'os_reg': require("./assets/fonts/OpenSans-Regular.ttf"),
       'sansat_light': require("./assets/fonts/sansation-light.ttf"),
-      'sanst_reg' : require('./assets/fonts/Sansation_Regular.ttf')
+      'sansat_reg' : require('./assets/fonts/Sansation_Regular.ttf')
     })
 
   if (font) {

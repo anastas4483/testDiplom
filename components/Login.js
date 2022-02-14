@@ -28,7 +28,7 @@ export default function Login() {
         </View>
         <View style={styleLogin.loginForm}>
           <Text style={gStyle.H1}>Добрый день!</Text>
-          <Text style={gStyle.H3}>Давайте сначала {"\n"}авторизуемся</Text>
+          <Text style={gStyle.H2}>Давайте сначала {"\n"}авторизуемся</Text>
           <Form />
         </View>
         {/* <View style={styleLogin.loginWrapBottom}> */}

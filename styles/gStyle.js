@@ -22,10 +22,15 @@ container: {
     fontFamily: "sansat_light",
     paddingBottom: 13,
   },
-  H3: {
+  H2: {
     fontSize: 24,
     color: "#fff",
     fontFamily: "sansat_light",
+  },
+  H3:{
+    fontSize: 21,
+    color: '#4B4B4B',
+    fontFamily: "sansat_reg",
   },
   circle: {
     position: "absolute",

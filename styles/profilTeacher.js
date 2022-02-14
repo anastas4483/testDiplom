@@ -29,9 +29,7 @@ export const stylePT = StyleSheet.create({
 
     },
     nameInfo:{
-        fontFamily: 'sanst_reg',
-        fontSize: 21,
-        color: '#4B4B4B',
+        
         lineHeight: 27,
         letterSpacing: 0
 
@@ -56,7 +54,44 @@ export const stylePT = StyleSheet.create({
         justifyContent: 'space-around',
         width: '40%',
         marginTop: 6
-    }
+    },
+    SubjectsWrap:{
+        borderTopColor: '#bbb',
+        borderTopWidth: 1,
+        width: '90%',
+        textAlign: 'center',
+        paddingTop: 5,
+        marginTop: 25,
+        marginHorizontal: '5%',
 
+
+    },
+    subjectH3:{
+        textAlign: 'center',
+        paddingVertical: 15,
+    },
+    listText:{
+        fontFamily: 'os_reg',
+        fontSize: 17,
+        color: '#423333',
+        padding: 5,
+        fontStyle:'italic',
+        textDecorationLine: 'underline'
+        
+    },
+    listItem:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start'
+    },
+    listDot:{
+       color: '#999494',
+       fontSize: 28 
+    },
+    listArrow:{
+        color: '#423333',
+        fontSize: 20,
+        fontStyle: 'normal'
+    }
 
 })

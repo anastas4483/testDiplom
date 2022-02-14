@@ -139,5 +139,20 @@ backgroundColor: "#fff",
   mapImg:{
     width: 25,
     height: 25
-  }
+  },
+  wrapFAQ:{
+    position: 'absolute',
+    top: '120%',
+    left: '60%',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    },
+    textFAQ:{
+      marginTop: 50,
+      marginRight: 140,
+      fontFamily: 'os_reg',
+      fontSize: 30,
+      color: '#000'
+
+    }
 })

@@ -73,6 +73,10 @@ export default function Login() {
                 </View>
                 </ImageBackground>
           </View>
+
+          <View style={[gStyle.circle, stylePers.wrapFAQ]}>
+            <Text style={stylePers.textFAQ}> FAQ</Text>
+          </View>
         </View>
       </LinearGradient>
     </View>

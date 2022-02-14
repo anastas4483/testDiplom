@@ -69,7 +69,7 @@ export const stylePers = StyleSheet.create({
     height: 77,
     borderRadius: 20,
     paddingVertical: 15,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     textAlign: "left",
   },
   searchTeacherText: {
@@ -79,7 +79,7 @@ export const stylePers = StyleSheet.create({
   searchMagnifier: {
     position: "absolute",
     top: 10,
-    left: "105%",
+    right: 20,
     resizeMode: "stretch",
     width: 18,
     height: 18,

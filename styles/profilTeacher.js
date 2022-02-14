@@ -6,24 +6,13 @@ export const stylePT = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 40
     },
-    wrapBack:{
-        flexDirection: 'row',
-        alignItems: 'center',
-
-    },
-    BackText:{
-        fontFamily: 'os_reg',
-        fontSize: 16,
-        textDecorationLine: 'underline',
-        marginLeft: 5,
-
-    },
+    
     wrapInfo:{
         backgroundColor: '#fff',
         borderRadius: 20,
         width: '100%',
         height: '85%',
-        marginTop: 30,
+        marginTop: 20,
         paddingVertical: 50,
         paddingHorizontal: 8,
 

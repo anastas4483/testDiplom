@@ -6,6 +6,7 @@ import { FlatList, TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
 import { symbolicateLogLazy } from "react-native/Libraries/LogBox/Data/LogBoxData"
 import ListSubjects from "./ListSubjects"
+import GoBackBtn from "./GoBackBtn"
 export default function ProfilTeacher() {
   return (
     <View style={gStyle.container}>
@@ -25,13 +26,7 @@ export default function ProfilTeacher() {
           </Pressable>
         </View>
         <View style={stylePT.wrap}>
-          <View style={stylePT.wrapBack}>
-            <Image
-              source={require("../assets/backArrow.png")}
-              style={{ width: 27, height: 24 }}
-            />
-            <Text style={stylePT.BackText}>Назад</Text>
-          </View>
+          <GoBackBtn/>
           <View style={stylePT.wrapInfo}>
             <View style={stylePT.wrapNamePhoto}>
               <Image

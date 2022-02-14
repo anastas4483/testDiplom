@@ -50,7 +50,7 @@ export default function Login() {
           </View>
           <View style={[stylePers.persLevels,stylePers.wrapSearch]}>
             <View style={stylePers.wrapSearchTeacher}>
-              <Text style={stylePers.searchTeacherText}>Поиск {'\n'}преподавателя</Text> 
+              <Text style={stylePers.searchTeacherText}>Список{'\n'}преподавателей</Text> 
               <Image source={require('../assets/magnifier.png')} style={stylePers.searchMagnifier}/>
             </View>
             <View style={stylePers.wrapSearchObject}>

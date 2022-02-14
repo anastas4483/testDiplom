@@ -2,7 +2,7 @@ import { StyleSheet, Platform } from "react-native"
 import { G } from "react-native-svg"
 
 export const gStyle = StyleSheet.create({
-container: {
+  container: {
     flex: 1,
     //  paddingTop:20,
     alignItems: "center",
@@ -27,9 +27,9 @@ container: {
     color: "#fff",
     fontFamily: "sansat_light",
   },
-  H3:{
+  H3: {
     fontSize: 21,
-    color: '#4B4B4B',
+    color: "#4B4B4B",
     fontFamily: "sansat_reg",
   },
   circle: {
@@ -63,10 +63,27 @@ container: {
     top: 0,
     alignItems: "center",
   },
-  
+
   persHeaderGear: {
     width: 30,
     height: 30,
   },
 
+  wrapBack: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: '#E9E9E9',
+    borderRadius: 20,
+    width: 110,
+    height: 40,
+    padding: 10,
+    elevation: 8,
+    
+  },
+  BackText: {
+    fontFamily: "os_reg",
+    fontSize: 16,
+    color: '#7A7A7A',
+    marginLeft: 5,
+  },
 })

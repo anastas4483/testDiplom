@@ -12,8 +12,9 @@ export default function Login() {
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
         style={gStyle.gradient}
+        start={{x: 0, y: 1}} end={{x: 0, y: -1}}
       >
-        <View style={[styleLogin.loginCircle, styleLogin.loginCircleTop]}>
+        <View style={[gStyle.circle, styleLogin.loginCircleTop]}>
           <View style={styleLogin.loginWrapLogo}>
             <Image
               style={styleLogin.loginLogo}
@@ -31,7 +32,7 @@ export default function Login() {
           <Form />
         </View>
         {/* <View style={styleLogin.loginWrapBottom}> */}
-          <View style={[styleLogin.loginCircle, styleLogin.loginCircleBottom]}></View>
+          <View style={[gStyle.circle, styleLogin.loginCircleBottom]}></View>
           <Text style={styleLogin.loginCopy}>
             &#169; 2022 ФГБОУ ВО «ВГТУ».{"\n"} Все права защищены
           </Text>

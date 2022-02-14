@@ -16,6 +16,7 @@ export default function App() {
     Font.loadAsync({
       'os_reg': require("./assets/fonts/OpenSans-Regular.ttf"),
       'sansat_light': require("./assets/fonts/sansation-light.ttf"),
+      'sanst_reg' : require('./assets/fonts/Sansation_Regular.ttf')
     })
 
   if (font) {

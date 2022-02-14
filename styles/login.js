@@ -61,20 +61,7 @@ export const styleLogin = StyleSheet.create({
     fontFamily: "sansat_light",
     textAlign: "right",
   },
-  loginCircle: {
-    position: "absolute",
-    backgroundColor: "#90ACCD",
-    borderColor: "#3D7DFA",
-    borderWidth: 2,
-    shadowRadius: 15,
-    shadowColor:
-      Platform.OS === "android" ? "#fff" : "rgba(255, 255, 255, 0.2)",
-    shadowOffset: { height: 9, width: -9 },
-    elevation: 20,
-    width: Platform.OS === "web" ? "45%" : "90%",
-    height: Platform.OS === "web" ? "90%" : 300,
-    borderRadius: 500,
-  },
+ 
   loginCircleTop: {
     justifyContent: "center",
     alignItems: "center",

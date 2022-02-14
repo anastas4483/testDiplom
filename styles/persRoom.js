@@ -12,11 +12,7 @@ export const stylePers = StyleSheet.create({
     top: 0,
     alignItems: "center",
   },
-  persHeaderText: {
-    fontFamily: "os_reg",
-    fontSize: 18,
-    color: "#fff",
-  },
+  
   persHeaderGear: {
     width: 30,
     height: 30,

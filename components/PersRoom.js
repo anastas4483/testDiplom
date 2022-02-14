@@ -16,7 +16,7 @@ export default function Login() {
         start={{x: 0, y: 1}} end={{x: 0, y: -1}}
       >
         <View style={stylePers.persHeader}>
-          <Text style={stylePers.persHeaderText}>Добрый день, Андрей!</Text>
+          <Text style={gStyle.headerText}>Добрый день, Андрей!</Text>
           <Pressable onPress={onPressHandler}>
             <Image
               source={require("../assets/gear.png")}

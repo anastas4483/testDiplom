@@ -7,6 +7,7 @@ import { gStyle } from "../styles/gStyle"
 import { symbolicateLogLazy } from "react-native/Libraries/LogBox/Data/LogBoxData"
 import ListSubjects from "./ListSubjects"
 import GoBackBtn from "./GoBackBtn"
+import Header from "./Header"
 export default function ProfilTeacher() {
   return (
     <View style={gStyle.container}>
@@ -16,15 +17,7 @@ export default function ProfilTeacher() {
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: -1 }}
       >
-        <View style={gStyle.persHeader}>
-          <Text style={gStyle.headerText}>Добрый день, Андрей!</Text>
-          <Pressable>
-            <Image
-              source={require("../assets/gear.png")}
-              style={gStyle.persHeaderGear}
-            />
-          </Pressable>
-        </View>
+        <Header/>
         <View style={stylePT.wrap}>
           <GoBackBtn/>
           <View style={stylePT.wrapInfo}>

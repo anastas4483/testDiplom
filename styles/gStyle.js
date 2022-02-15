@@ -52,7 +52,7 @@ export const gStyle = StyleSheet.create({
     fontSize: 18,
     color: "#fff",
   },
-  persHeader: {
+  header: {
     width: "100%",
     backgroundColor: "#355D8B",
     paddingTop: 35,
@@ -62,9 +62,10 @@ export const gStyle = StyleSheet.create({
     paddingHorizontal: 10,
     top: 0,
     alignItems: "center",
+    marginBottom: 28
   },
 
-  persHeaderGear: {
+  headerGear: {
     width: 30,
     height: 30,
   },

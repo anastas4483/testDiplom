@@ -3,6 +3,7 @@ import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 import { stylePers } from "../styles/persRoom"
 import { gStyle } from "../styles/gStyle"
+import Header from "./Header"
 
 export default function Login() {
   const onPressHandler = () => {
@@ -15,15 +16,7 @@ export default function Login() {
         style={[gStyle.gradient, { paddingTop: 0 }]}
         start={{x: 0, y: 1}} end={{x: 0, y: -1}}
       >
-        <View style={gStyle.persHeader}>
-          <Text style={gStyle.headerText}>Добрый день, Андрей!</Text>
-          <Pressable onPress={onPressHandler}>
-            <Image
-              source={require("../assets/gear.png")}
-              style={gStyle.persHeaderGear}
-            />
-          </Pressable>
-        </View>
+       <Header/>
 
         <View style={stylePers.persWrap}>
           <View style={[stylePers.persNots, stylePers.persLevels]}>

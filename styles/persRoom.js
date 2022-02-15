@@ -5,7 +5,7 @@ export const stylePers = StyleSheet.create({
   persWrap: {
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 40,
+    paddingVertical: 10,
     justifyContent: "space-between",
   },
   persLevels: {

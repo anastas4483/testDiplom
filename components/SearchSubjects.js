@@ -1,4 +1,4 @@
-import { Text, View, Image, Pressable } from "react-native"
+import { Text, View, Image, Pressable,TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 import { styleSearchS } from "../styles/searchSubjects"
@@ -63,12 +63,12 @@ export default function SearchSubjects() {
                 </Text>
               </View>
             </View>
-            <Button
-  onPress={()=>console.log('dks')}
-  title="Learn More"
-  color="#841584"
-  accessibilityLabel="Learn more about this purple button"
-/>
+            <TouchableOpacity
+        style={styleSearchS.button}
+        onPress={()=> console.log('ff')}
+      >
+        <Text style={styleSearchS.buttonText}>перейти в радел заданий</Text>
+      </TouchableOpacity>
           </View>
         </View>
       </LinearGradient>

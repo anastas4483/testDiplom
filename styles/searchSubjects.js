@@ -71,6 +71,26 @@ export const styleSearchS = StyleSheet.create({
         color: '#757575',
         textAlign: 'center',
         marginTop: 5
+    },
+    button:{
+        backgroundColor: '#4579B5',
+        padding: 10,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems:'center',
+        elevation: 7,
+        marginVertical: 40,
+        paddingVertical: 12,
+        width: '90%',
+        marginHorizontal: '5%'
+
+
+    },
+    buttonText:{
+        color: '#fff',
+        fontFamily: 'os_reg',
+        fontSize: 15,
+
     }
 
 

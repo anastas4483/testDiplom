@@ -26,7 +26,7 @@ export default function App() {
     })
 
   if (font) {
-    return <PersRoom />
+    return <SearchSubjects />
   } else {
     return (
       <AppLoading

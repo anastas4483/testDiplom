@@ -79,6 +79,7 @@ export const gStyle = StyleSheet.create({
     height: 40,
     padding: 10,
     elevation: 8,
+    marginLeft: 20
     
   },
   BackText: {

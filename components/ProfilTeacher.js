@@ -17,9 +17,10 @@ export default function ProfilTeacher() {
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: -1 }}
       >
-        <Header/>
+        <Header/> 
+        <GoBackBtn/>
         <View style={stylePT.wrap}>
-          <GoBackBtn/>
+         
           <View style={stylePT.wrapInfo}>
             <View style={stylePT.wrapNamePhoto}>
               <Image

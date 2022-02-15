@@ -4,14 +4,14 @@ import { G } from "react-native-svg"
 export const stylePT = StyleSheet.create({
     wrap:{
         paddingHorizontal: 20,
-        paddingVertical: 40
+        // paddingVertical: 10
     },
     
     wrapInfo:{
         backgroundColor: '#fff',
         borderRadius: 20,
         width: '100%',
-        height: '85%',
+        height: '75%',
         marginTop: 20,
         paddingVertical: 50,
         paddingHorizontal: 8,

@@ -1,11 +1,9 @@
 import { Text, View, Image, Pressable } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
-import { stylePT } from "../styles/profilTeacher"
+import { styleSearchS } from "../styles/searchSubjects"
 import { FlatList, TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
-import { symbolicateLogLazy } from "react-native/Libraries/LogBox/Data/LogBoxData"
-import ListSubjects from "./ListSubjects"
 import GoBackBtn from "./GoBackBtn"
 import Header from "./Header"
 export default function SearchSubjects() {
@@ -18,10 +16,12 @@ export default function SearchSubjects() {
         end={{ x: 0, y: -1 }}
       >
         <Header />
-        <View>
-          <GoBackBtn/>
-          
-        </View>
+          <GoBackBtn />
+
+          <View style={styleSearchS.wrap}>
+            
+            <Text style={[gStyle.H3,styleSearchS.nameSubject]}>Переферийные устройства</Text>
+          </View>
       </LinearGradient>
     </View>
   )

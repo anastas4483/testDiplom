@@ -13,7 +13,7 @@ LogBox.ignoreLogs(['Remote debugger']);
 import Login from "./components/Login"
 import PersRoom from './components/PersRoom'
 import ProfilTeacher from "./components/ProfilTeacher"
-import SearchSubjects from "./components/SearchSubjects"
+import ProfilSubject from "./components/ProfilSubject"
 
 export default function App() {
   const [font, setFont] = useState(false)
@@ -26,7 +26,7 @@ export default function App() {
     })
 
   if (font) {
-    return <SearchSubjects />
+    return <ProfilSubject />
   } else {
     return (
       <AppLoading

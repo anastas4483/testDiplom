@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from "react-native"
 import { G } from "react-native-svg"
 
-export const styleSearchS = StyleSheet.create({
+export const stylePS = StyleSheet.create({
     wrap:{
         marginTop: 30,
         marginHorizontal: 20,

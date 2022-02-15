@@ -1,4 +1,4 @@
-import {  View, TextInput,Pressable, Text, Button } from "react-native"
+import {  View, TextInput,Pressable, Text, Button,TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import * as Font from "expo-font"
@@ -29,11 +29,11 @@ export default function Form() {
       {/* <Button title="Войти" color= '#fff' style={styleLogin.loginButton}/> */}
      
       {/* <BoxShadow setting={shadowOpt}>  */}
-      <Pressable style={styleLogin.loginButton}>
+      <TouchableOpacity style={styleLogin.loginButton}>
           <Text style={styleLogin.loginButtonText}>
               Войти
           </Text>
-      </Pressable>
+      </TouchableOpacity>
 
      
       {/* </BoxShadow> */}

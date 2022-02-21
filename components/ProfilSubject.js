@@ -20,7 +20,7 @@ export default function ProfilSubject() {
 
         <View style={stylePS.wrap}>
           <Text style={[gStyle.H3, stylePS.nameSubject]}>
-            Переферийные устройства
+            Периферийные устройства
           </Text>
           <View style={stylePS.infoSubject}>
             <View style={stylePS.wrapRow}>

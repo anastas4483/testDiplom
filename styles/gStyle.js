@@ -32,6 +32,12 @@ export const gStyle = StyleSheet.create({
     color: "#4B4B4B",
     fontFamily: "sansat_reg",
   },
+  H4: {
+    fontSize: 19,
+    color: "#fff",
+    fontFamily: "sansat_reg",
+  },
+
   circle: {
     position: "absolute",
     backgroundColor: "#90ACCD",

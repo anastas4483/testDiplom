@@ -2,13 +2,12 @@ import { Text, View, Image, Pressable } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 import { stylePT } from "../styles/profilTeacher"
-import { FlatList, TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
 import { symbolicateLogLazy } from "react-native/Libraries/LogBox/Data/LogBoxData"
 import ListSubjects from "./ListSubjects"
 import GoBackBtn from "./GoBackBtn"
 import Header from "./Header"
-export default function ProfilTeacher() {
+export default function ProfilTeacher(props) {
   return (
     <View style={gStyle.container}>
       <LinearGradient
@@ -41,7 +40,7 @@ export default function ProfilTeacher() {
             </View>
             <View style={stylePT.SubjectsWrap}>
                 <Text style={[gStyle.H3,stylePT.subjectH3]}>Ваши дисциплины:</Text>
-                <ListSubjects/>
+                <ListSubjects data={props.data}/>
               </View>
           </View>
         </View>

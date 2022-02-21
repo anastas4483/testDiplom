@@ -11,7 +11,7 @@ export const stylePT = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 20,
         width: '100%',
-        height: '75%',
+        // height: '75%',
         marginTop: 20,
         paddingVertical: 50,
         paddingHorizontal: 8,

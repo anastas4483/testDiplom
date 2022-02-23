@@ -16,6 +16,7 @@ import Header from "./Header"
 import ListSubjects from "./ListSubjects"
 export default function SeatchSubject(props) {
     const [findSubj,setFindSubj]=useState([])
+    
     const searchChangeHandler=(e)=>{
         e==='' ? setFindSubj([]) : setFindSubj(props.data.filter((item)=> item.name.toLowerCase().includes(e.toLowerCase())))
        for(let i=0; i<findSubj.length;i++) console.log(findSubj[i].name)

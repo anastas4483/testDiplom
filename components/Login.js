@@ -5,7 +5,15 @@ import { styleLogin } from "../styles/login"
 import Form from "./Form"
 import { gStyle } from "../styles/gStyle"
 export default function Login() {
-  return (
+
+  const [login, setLogin] = useState('')
+  const [pass, setPass] = useState('')
+
+
+  const GoToPRBtnOnPressHandler=(e)=>{
+    console.log(login,pass)
+  }
+    return (
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
         style={gStyle.gradient}
@@ -26,7 +34,7 @@ export default function Login() {
         <View style={styleLogin.loginForm}>
           <Text style={gStyle.H1}>Добрый день!</Text>
           <Text style={gStyle.H2}>Давайте сначала {"\n"}авторизуемся</Text>
-          <Form />
+          <Form setLogin={setLogin} setPass={setPass} GoToPRBtnOnPressHandler={GoToPRBtnOnPressHandler}/>
         </View>
         {/* <View style={styleLogin.loginWrapBottom}> */}
           <View style={[gStyle.circle, styleLogin.loginCircleBottom]}></View>

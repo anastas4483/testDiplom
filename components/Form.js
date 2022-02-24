@@ -5,35 +5,22 @@ import * as Font from "expo-font"
 import { useState } from "react"
 import { styleLogin } from "../styles/login"
 import {BoxShadow} from 'react-native-shadow'
-export default function Form() {
-
-    const shadowOpt = {
-        height: 55,
-        width: 180,
-        color:"#000",
-        border: 3,
-        radius:30,
-       
-        opacity:0.25,
-        x:4,
-        y:5,
-        style:{ 
-            borderRadius:20,
-            marginVertical:10,
-        }
-    }
+export default function Form(props) {
+  
+  
+ 
   return (
     <View style={styleLogin.loginFormWrap}>
-      <TextInput            placeholderTextColor="#B1CBE8" style={styleLogin.loginInput} placeholder="Ваш логин"/>
-      <TextInput placeholderTextColor="#B1CBE8" style={styleLogin.loginInput} secureTextEntry placeholder="Ваш пароль"/>
+      <TextInput placeholderTextColor="#B1CBE8" onChangeText={(text)=>props.setLogin(text)}  style={styleLogin.loginInput} placeholder="Ваш логин"/>
+      <TextInput placeholderTextColor="#B1CBE8" onChangeText={(text)=>props.setPass(text)} style={styleLogin.loginInput} secureTextEntry placeholder="Ваш пароль"/>
       {/* <Button title="Войти" color= '#fff' style={styleLogin.loginButton}/> */}
      
       {/* <BoxShadow setting={shadowOpt}>  */}
-      <TouchableOpacity style={styleLogin.loginButton}>
+      <Pressable style={styleLogin.loginButton} onPress={props.GoToPRBtnOnPressHandler}>
           <Text style={styleLogin.loginButtonText}>
               Войти
           </Text>
-      </TouchableOpacity>
+      </Pressable>
 
      
       {/* </BoxShadow> */}

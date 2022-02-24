@@ -2,12 +2,17 @@ import { StatusBar } from "expo-status-bar"
 import { Platform, StyleSheet, Text, View } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
-import * as Font from "expo-font"
-import React, { useEffect, useState } from "react"
 import { gStyle } from "./styles/login"
 import { LogBox } from "react-native"
+import useFonts from './hooks/useFonts';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-LogBox.ignoreLogs(["Remote debugger"])
+import React from 'react'
+
+// const Stack = createNativeStackNavigator();
+
+// LogBox.ignoreLogs(["Remote debugger"])
 
 import Login from "./components/Login"
 import PersRoom from "./components/PersRoom"
@@ -29,27 +34,24 @@ export default class App extends React.Component {
     ],
   }
 
+
   componentDidMount(){
-    
+    console.log('mount')
   }
 
-  fonts = () =>
-    Font.loadAsync({
-      os_reg: require("./assets/fonts/OpenSans-Regular.ttf"),
-      sansat_light: require("./assets/fonts/sansation-light.ttf"),
-      sansat_reg: require("./assets/fonts/Sansation_Regular.ttf"),
-    })
+  fonts = async () => await useFonts();
   render() {
     if (this.state.font) {
-      return <SeatchSubject data={list} />
-    } else {
+      // return <SeatchSubject data={this.state.list} />
+      return <Login/>
+    } 
       return (
         <AppLoading
-          startAsync={fonts}
-          onFinish={() => setFont(true)}
+          startAsync={this.fonts}
+          onFinish={() => this.setState({font:true})}
           onError={console.warn}
         />
       )
-    }
+    
   }
 }

@@ -5,14 +5,14 @@ import AppLoading from "expo-app-loading"
 import { gStyle } from "./styles/login"
 import { LogBox } from "react-native"
 import useFonts from './hooks/useFonts';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import React from 'react'
 
-// const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-// LogBox.ignoreLogs(["Remote debugger"])
+LogBox.ignoreLogs(["Remote debugger"])
 
 import Login from "./components/Login"
 import PersRoom from "./components/PersRoom"
@@ -43,7 +43,14 @@ export default class App extends React.Component {
   render() {
     if (this.state.font) {
       // return <SeatchSubject data={this.state.list} />
-      return <Login/>
+      return (
+        <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" options={{headerShown: false}} component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    // <Login/>
+      )
     } 
       return (
         <AppLoading

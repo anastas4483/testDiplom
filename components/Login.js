@@ -1,14 +1,11 @@
-import { Text, View, Image } from "react-native"
+import { Text, View, Image,KeyboardAvoidingView, ScrollView } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 import { styleLogin } from "../styles/login"
-
 import Form from "./Form"
-import { TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
 export default function Login() {
   return (
-    <View style={gStyle.container}>
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
         style={gStyle.gradient}
@@ -38,6 +35,5 @@ export default function Login() {
           </Text>
         {/* </View> */}
       </LinearGradient>
-    </View>
   )
 }

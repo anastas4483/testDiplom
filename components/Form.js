@@ -24,8 +24,8 @@ export default function Form() {
     }
   return (
     <View style={styleLogin.loginFormWrap}>
-      <TextInput placeholderTextColor='#fff' style={styleLogin.loginInput} placeholder="Ваш логин"/>
-      <TextInput placeholderTextColor='#fff' style={styleLogin.loginInput} placeholder="Ваш пароль"/>
+      <TextInput            placeholderTextColor="#B1CBE8" style={styleLogin.loginInput} placeholder="Ваш логин"/>
+      <TextInput placeholderTextColor="#B1CBE8" style={styleLogin.loginInput} secureTextEntry placeholder="Ваш пароль"/>
       {/* <Button title="Войти" color= '#fff' style={styleLogin.loginButton}/> */}
      
       {/* <BoxShadow setting={shadowOpt}>  */}

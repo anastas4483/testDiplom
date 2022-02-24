@@ -69,6 +69,8 @@ export const styleLogin = StyleSheet.create({
     left: Platform.OS === "web" ? "75%" : "50%",
   },
   loginCircleBottom: {
+    // position: 'absolute',
+
     top: Platform.OS === "web" ? "65%" : 600,
     left: Platform.OS === "web" ? "-30%" : "-45%",
   },

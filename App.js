@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 LogBox.ignoreLogs(["Remote debugger"])
 
 import Login from "./components/Login"
-import PersRoom from "./components/PersRoom"
+import PersRoom from "./components/Home"
 import ProfilTeacher from "./components/ProfilTeacher"
 import ProfilSubject from "./components/ProfilSubject"
 import SeatchSubject from "./components/SearchSubject"
@@ -47,6 +47,8 @@ export default class App extends React.Component {
         <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" options={{headerShown: false}} component={Login} />
+        <Stack.Screen name="Home" options={{headerShown: false}} component={PersRoom} />
+
       </Stack.Navigator>
     </NavigationContainer>
     // <Login/>

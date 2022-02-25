@@ -12,6 +12,8 @@ import Form from "./Form"
 import { gStyle } from "../styles/gStyle"
 import { auth } from "../base"
 import { useNavigation } from "@react-navigation/core"
+import { query, where, orderBy } from "firebase/firestore"
+import * as firebase from "firebase"
 
 export default function Login() {
   const [login, setLogin] = useState("")
@@ -29,27 +31,47 @@ export default function Login() {
     // return unsubscribe
   })
 
-  // for (let i = 0; i < sampleObj.length; i++) {
-  //   let acc = sampleObj[i]
-  //   if (acc.login === input_login) {
-  //     p_login.classList.add("hide")
-  //     p_login.classList.remove("show")
-  //     if (acc.password == password) {
-  //       signin(acc, () => navigate('/', { replace: true }))
-  //       // break
-  //     }
-  //     p_pass.classList.add("show")
-  //     break
-  //   } else {
-  //     p_login.classList.remove("hide")
-  //     p_login.classList.add("show")
-  //   }
-  // }
-
-  const hanldeLogin = (e) => {
-    console.log()
+  const GoToPRBtnOnPressHandler = (e) => {
+    // for (let i = 0; i < sampleObj.length; i++) {
+    //   let acc = sampleObj[i]
+    //   if (acc.login === input_login) {
+    //     p_login.classList.add("hide")
+    //     p_login.classList.remove("show")
+    //     if (acc.password == password) {
+    //       signin(acc, () => navigate("/", { replace: true }))
+    //       // break
+    //     }
+    //     p_pass.classList.add("show")
+    //     break
+    //   } else {
+    //     p_login.classList.remove("hide")
+    //     p_login.classList.add("show")
+    //   }
+    // }
+    if (!isSelected) {
+      const studentsRef = firebase.database().ref("students/")
+      studentsRef
+        .orderByChild("login")
+        .equalTo(login)
+        .on("child_added", function (data) {
+          console.log("Start at filter: " + data.val().name)
+          if (data.val().pass === pass) console.log("get it")
+        })
+    } else {
+      const teachersRef = firebase.database().ref("teachers/")
+      teachersRef
+        .orderByChild("login")
+        .equalTo(login)
+        .on("child_added", function (data) {
+          console.log("Start at filter: " + data.val().full_name)
+          if (data.val().pass === pass) console.log("get it")
+        })
+    }
   }
 
+  // const q = query(firebase.database().ref(`/students`), where("login", ">", 100000), orderBy("population"));
+
+  // ---- Вход по емаил в firebase
   // const hanldeLogin=(e)=>{
   //   auth
   //   .signInWithEmailAndPassword(login,pass)
@@ -94,7 +116,7 @@ export default function Login() {
         <Form
           setLogin={setLogin}
           setPass={setPass}
-          GoToPRBtnOnPressHandler={hanldeLogin}
+          GoToPRBtnOnPressHandler={GoToPRBtnOnPressHandler}
           isSelected={isSelected}
           setSelection={setSelection}
         />

@@ -2,7 +2,7 @@
 import * as firebase from "firebase";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import studentsBD from './studentsBD'
+import teachersBD from './teachersBD'
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBGIFs9pjMP3wcF0lShxbnGZ2Ypzv9wvew",
@@ -20,7 +20,7 @@ if (firebase.apps.length===0){
   app=firebase.initializeApp(firebaseConfig);
 }else{
   app=firebase.app()
-  // studentsBD.forEach((item,index)=>   firebase.database().ref(`/students/${index+1}`).set(item))
+  teachersBD.forEach((item,index)=>   firebase.database().ref(`/teachers/${index+1}`).set(item))
 }
 const auth=firebase.auth()
 export {auth}

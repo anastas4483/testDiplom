@@ -97,5 +97,12 @@ export const styleLogin = StyleSheet.create({
     width: '100%',
     height: '100%'
   
+  },
+  checkboxText:{
+    color: '#B1CBE8',
+    marginLeft: 10,
+    marginBottom: 20,
+    fontFamily: 'os_reg',
+    fontSize: 16
   }
 })

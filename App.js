@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import { gStyle } from "./styles/login"
 import { LogBox } from "react-native"
-import useFonts from './hooks/useFonts';
+import setFonts from './hooks/setFonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -32,18 +32,21 @@ export default class App extends React.Component {
       { name: "Микропроцессорные системы", group: 1, id: 5, teacher: 3 },
       { name: "САПР", group: 2, id: 6, teacher: 3 },
     ],
+    // fonts: ''
   }
 
 
-  componentDidMount(){
+ componentDidMount(){
     console.log('mount')
   }
 
-  fonts = async () => await useFonts();
+
+
+
   render() {
+    console.log(fonts)
     if (this.state.font) {
-      // return <SeatchSubject data={this.state.list} />
-      return (
+        return (
         <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" options={{headerShown: false}} component={Login} />
@@ -51,12 +54,11 @@ export default class App extends React.Component {
 
       </Stack.Navigator>
     </NavigationContainer>
-    // <Login/>
-      )
+      ) 
     } 
       return (
         <AppLoading
-          startAsync={this.fonts}
+          startAsync={()=>setFonts()}
           onFinish={() => this.setState({font:true})}
           onError={console.warn}
         />

@@ -1,14 +1,20 @@
 import { Text, View, Image, Pressable, ImageBackground } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { stylePers } from "../styles/persRoom"
 import { gStyle } from "../styles/gStyle"
 import Header from "./Header"
 
-export default function Login() {
+export default function Login(props) {
   const onPressHandler = () => {
     console.log("click")
   }
+  const [user,setUser]=useState(props.route.params.user)
+  const [isTeach,setIsTeach]=useState(props.route.params.isTeach)
+  
+  useEffect(()=>{
+     
+    })
   return (
     <View style={gStyle.container}>
       <LinearGradient

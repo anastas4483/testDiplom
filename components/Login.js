@@ -55,16 +55,19 @@ export default function Login() {
         .equalTo(login)
         .on("child_added", function (data) {
           console.log("Start at filter: " + data.val().name)
-          if (data.val().pass === pass) console.log("get it")
+          if (data.val().pass === pass) if (data.val().pass === pass) navigation.navigate('Home', {user:data.val(), isTeach: isSelected})
+
         })
     } else {
       const teachersRef = firebase.database().ref("teachers/")
+      // const populationQuery = teachersRef.where("login", "==", login);
+      // console.log(populationQuery)
       teachersRef
         .orderByChild("login")
         .equalTo(login)
         .on("child_added", function (data) {
           console.log("Start at filter: " + data.val().full_name)
-          if (data.val().pass === pass) console.log("get it")
+          if (data.val().pass === pass) navigation.navigate('Home', {user:data.val(), isTeach: isSelected})
         })
     }
   }

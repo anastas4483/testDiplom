@@ -14,6 +14,8 @@ import { auth } from "../base"
 import { useNavigation } from "@react-navigation/core"
 import { query, where, orderBy } from "firebase/firestore"
 import * as firebase from "firebase"
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Login() {
   const [login, setLogin] = useState("")
@@ -31,6 +33,21 @@ export default function Login() {
     // return unsubscribe
   })
 
+  const setData = async (key,value) => {
+    try {
+      await AsyncStorage.setItem(`@${key}`, value)
+    } catch (e) {
+      // saving error
+      console.log('set item was failed');
+    }
+  }
+
+  const signIn=(user)=>{
+    navigation.navigate('Home', {user:data.val(), isTeach: isSelected})
+    setData('user',)
+    // localStorage.setItem('isTeach', isTeach*1)
+    // localStorage.setItem('user', user.id)
+  }
   const GoToPRBtnOnPressHandler = (e) => {
     // for (let i = 0; i < sampleObj.length; i++) {
     //   let acc = sampleObj[i]
@@ -48,6 +65,7 @@ export default function Login() {
     //     p_login.classList.add("show")
     //   }
     // }
+   
     if (!isSelected) {
       const studentsRef = firebase.database().ref("students/")
       studentsRef
@@ -55,7 +73,7 @@ export default function Login() {
         .equalTo(login)
         .on("child_added", function (data) {
           console.log("Start at filter: " + data.val().name)
-          if (data.val().pass === pass) if (data.val().pass === pass) navigation.navigate('Home', {user:data.val(), isTeach: isSelected})
+          if (data.val().pass === pass) if (data.val().pass === pass) signIn(data.val())
 
         })
     } else {
@@ -67,7 +85,7 @@ export default function Login() {
         .equalTo(login)
         .on("child_added", function (data) {
           console.log("Start at filter: " + data.val().full_name)
-          if (data.val().pass === pass) navigation.navigate('Home', {user:data.val(), isTeach: isSelected})
+          if (data.val().pass === pass) signIn(data.val())
         })
     }
   }

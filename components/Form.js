@@ -11,7 +11,7 @@ export default function Form(props) {
     <View style={styleLogin.loginFormWrap}>
       <TextInput
         placeholderTextColor="#B1CBE8"
-        onChangeText={(text) => props.setLogin(text)}
+        onChangeText={(text) => props.setLogin(text.trim())}
         style={styleLogin.loginInput}
         placeholder="Ваш логин"
       />

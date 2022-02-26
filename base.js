@@ -20,7 +20,7 @@ if (firebase.apps.length===0){
   app=firebase.initializeApp(firebaseConfig);
 }else{
   app=firebase.app()
-  teachersBD.forEach((item,index)=>   firebase.database().ref(`/teachers/${index+1}`).set(item))
+  // teachersBD.forEach((item,index)=>   firebase.database().ref(`/teachers/${index+1}`).set(item))
 }
 const auth=firebase.auth()
 export {auth}

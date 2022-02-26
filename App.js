@@ -22,6 +22,7 @@ import SeatchSubject from "./components/SearchSubject"
 import base from "./base"
 
 export default class App extends React.Component {
+  // static contextType = ThemeContext;
   state = {
     font: false,
     list: [
@@ -37,7 +38,7 @@ export default class App extends React.Component {
 
 
  componentDidMount(){
-    console.log('mount')
+    // console.log(localStorage.getItem('user'))
   }
 
 

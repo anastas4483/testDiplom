@@ -13,7 +13,8 @@ export default function Login(props) {
   const [isTeach,setIsTeach]=useState(props.route.params.isTeach)
   
   useEffect(()=>{
-     
+    //  if(!localStorage.getItem('user')) navigation.navigate('Login')
+
     })
   return (
     <View style={gStyle.container}>
@@ -22,7 +23,7 @@ export default function Login(props) {
         style={[gStyle.gradient, { paddingTop: 0 }]}
         start={{x: 0, y: 1}} end={{x: 0, y: -1}}
       >
-       <Header/>
+       <Header user={user}/>
 
         <View style={stylePers.persWrap}>
           <View style={[stylePers.persNots, stylePers.persLevels]}>

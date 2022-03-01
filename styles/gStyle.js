@@ -94,4 +94,15 @@ export const gStyle = StyleSheet.create({
     color: '#7A7A7A',
     marginLeft: 5,
   },
+  loading:{
+    width: 200,
+    height: 200,
+    
+
+  },
+  wrapLoading:{
+flex: 1,
+alignItems: 'center',
+justifyContent: 'center',
+  }
 })

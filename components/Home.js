@@ -1,22 +1,57 @@
-import { Text, View, Image, Pressable, ImageBackground } from "react-native"
+import { Text, View, Image, Pressable, ImageBackground, AsyncStorage } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
-import { useEffect, useState } from "react"
+import { useEffect, useState,useContext } from "react"
 import { stylePers } from "../styles/persRoom"
 import { gStyle } from "../styles/gStyle"
 import Header from "./Header"
+import React from "react"
+import { useNavigation } from "@react-navigation/core"
 
+import { UserContext } from "../hooks/UserContext"
 export default function Login(props) {
+  const navigation = useNavigation()
+
+  const {userVal} = useContext(UserContext);
+  // console.log(userVal) 
   const onPressHandler = () => {
     console.log("click")
   }
-  const [user,setUser]=useState(props.route.params.user)
-  const [isTeach,setIsTeach]=useState(props.route.params.isTeach)
-  
-  useEffect(()=>{
+    const [user,setUser]=useState(null)
+    // const [isTeach,setIsTeach]=useState(props.route.params.isTeach)
+
+    // const [isTeach,setIsTeach]=useState(false)
+    // const [user,setUser]=useState({})
+//     const login = await AsyncStorage.getItem('@user');
+//     if (login !== null) {
+//     setUser(login)
+//     }
+//    else{
+//        // navigate to the Login screen or any other screen 
+// }
+
+  const getData = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem('@user')
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch(e) {
+      // error reading value
+    }
+  }
+  useEffect( ()=>{
     //  if(!localStorage.getItem('user')) navigation.navigate('Login')
+  getData().then(thing=>{
+  console.log('Aync',thing)
+  if(thing !==undefined && !user) {setUser(thing)}
+  if(!thing) navigation.navigate('Login')
+  // setUser(thing)  // сохранили user в AsyncStorage. Зачем? лучше использовать контекст
+
+})
 
     })
+    // AsyncStorage.removeItem('@user')
+if(user) {
   return (
+    
     <View style={gStyle.container}>
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
@@ -81,4 +116,11 @@ export default function Login(props) {
       </LinearGradient>
     </View>
   )
+}else{
+  return <View style={gStyle.wrapLoading}>
+    <Image source={require("../assets/loading.gif")}style={gStyle.loading} /> 
+    <Text>Ждем, пока все загрузится...</Text>
+  </View>
+}
+  
 }

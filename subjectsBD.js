@@ -27,6 +27,7 @@ const subjectsBD = [
       id_teach: 3
 
     },
+    
     {
       id: 5,
       name: "Компьютерная графика",
@@ -53,6 +54,13 @@ const subjectsBD = [
       name: "Физ. культура",
       groups: [1,2,3],
       id_teach: 5
+
+    },
+    {
+      id: 9,
+      name: "СПО",
+      groups: [1,3],
+      id_teach: 3
 
     },
   ]

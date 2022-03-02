@@ -28,10 +28,9 @@ export default function SeatchSubject(props) {
         groups.push(data.val())
     })
   } else {
-    const teachersRef = firebase.database().ref("teachers/")
+    const teachersRef = firebase.database().ref("subjects/")
     teachersRef.on("child_added", function (data) {
-      if (data.val().groups.some((item) => user.id_group == item))
-        groups.push(data.val())
+      if (data.val().id_teach===user.id ) groups.push(data.val())
     })
   }
 

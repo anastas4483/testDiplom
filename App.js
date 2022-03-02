@@ -67,6 +67,12 @@ export default class App extends React.Component {
                 component={Login}
                 initialParams={{'addUser': this.addUser}}
               />
+              <Stack.Screen
+                name="SearchSubject"
+                options={{ headerShown: false }}
+                component={SeatchSubject}
+                // initialParams={{'addUser': this.addUser}}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </UserContext.Provider>

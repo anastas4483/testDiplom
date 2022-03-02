@@ -91,7 +91,7 @@ export default function Login(props) {
               </Pressable>
             </View>
             <View style={[stylePers.persLevels, stylePers.wrapSearch]}>
-              <View style={stylePers.wrapSearchTeacher}>
+              <Pressable style={stylePers.wrapSearchTeacher} onPress={onPressHandler}>
                 <Text style={stylePers.searchTeacherText}>
                   Список{"\n"}преподавателей
                 </Text>
@@ -99,8 +99,9 @@ export default function Login(props) {
                   source={require("../assets/magnifier.png")}
                   style={stylePers.searchMagnifier}
                 />
-              </View>
-              <View style={stylePers.wrapSearchObject}>
+              </Pressable>
+              <Pressable onPress={()=> navigation.navigate('SearchSubject')} style={stylePers.wrapSearchObject}>
+                {/* <View  > */}
                 <Text style={stylePers.searchTeacherText}>
                   Поиск {"\n"}предмета
                 </Text>
@@ -108,7 +109,9 @@ export default function Login(props) {
                   source={require("../assets/magnifier.png")}
                   style={stylePers.searchMagnifier}
                 />
-              </View>
+              {/* </View> */}
+              </Pressable>
+              
             </View>
             <View style={[stylePers.persLevels, stylePers.wrapCabinet]}>
               <ImageBackground

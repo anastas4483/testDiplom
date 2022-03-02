@@ -12,7 +12,6 @@ import Form from "./Form"
 import { gStyle } from "../styles/gStyle"
 import { auth } from "../base"
 import { useNavigation } from "@react-navigation/core"
-import { query, where, orderBy } from "firebase/firestore"
 import * as firebase from "firebase"
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

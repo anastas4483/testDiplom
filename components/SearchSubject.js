@@ -5,7 +5,7 @@ import {
   Pressable,
   TouchableOpacity,
   TextInput,
-  FlatList
+  FlatList,
 } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
@@ -14,16 +14,37 @@ import { gStyle } from "../styles/gStyle"
 import GoBackBtn from "./GoBackBtn"
 import Header from "./Header"
 import ListSubjects from "./ListSubjects"
-export default function SeatchSubject(props) {
-    const [findSubj,setFindSubj]=useState([])
-    
-    const searchChangeHandler=(e)=>{
-        e==='' ? setFindSubj([]) : setFindSubj(props.data.filter((item)=> item.name.toLowerCase().includes(e.toLowerCase())))
-       for(let i=0; i<findSubj.length;i++) console.log(findSubj[i].name)
-      
-    }
+import * as firebase from "firebase"
 
-    
+export default function SeatchSubject(props) {
+  const [findSubj, setFindSubj] = useState([])
+  const [user, setUser] = useState(props.route.params.user)
+  let groups = []
+
+  if (!user.isTeach) {
+    const studentsRef = firebase.database().ref("subjects/")
+    studentsRef.on("child_added", function (data) {
+      if (data.val().groups.some((item) => user.id_group == item))
+        groups.push(data.val())
+    })
+  } else {
+    const teachersRef = firebase.database().ref("teachers/")
+    teachersRef.on("child_added", function (data) {
+      if (data.val().groups.some((item) => user.id_group == item))
+        groups.push(data.val())
+    })
+  }
+
+  const searchChangeHandler = (e) => {
+    e.trim() === "" || e === " "
+      ? setFindSubj([])
+      : setFindSubj(
+          groups.filter((item) =>
+            item.name.toLowerCase().includes(e.trim().toLowerCase())
+          )
+        )
+  }
+
   return (
     <View style={gStyle.container}>
       <LinearGradient
@@ -32,22 +53,20 @@ export default function SeatchSubject(props) {
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: -1 }}
       >
-        <Header />
+        <Header user={user} />
         <GoBackBtn />
 
         <View style={styleSS.wrap}>
           <TextInput
             style={styleSS.searchInput}
             placeholder="Поиск дисциплины..."
-            placeholderTextColor="#B1CBE8" 
+            placeholderTextColor="#B1CBE8"
             onChangeText={searchChangeHandler}
           />
           <Text style={[gStyle.H4, styleSS.searchText]}>
-              Вот что удалось найти:
+            Вот что удалось найти:
           </Text>
-          <ListSubjects data={findSubj} theme='light'/>
-
-          
+          <ListSubjects data={findSubj} theme="light" />
         </View>
       </LinearGradient>
     </View>

@@ -100,7 +100,7 @@ export default function Login(props) {
                   style={stylePers.searchMagnifier}
                 />
               </Pressable>
-              <Pressable onPress={()=> navigation.navigate('SearchSubject')} style={stylePers.wrapSearchObject}>
+              <Pressable onPress={()=> navigation.navigate('SearchSubject', {user})} style={stylePers.wrapSearchObject}>
                 {/* <View  > */}
                 <Text style={stylePers.searchTeacherText}>
                   Поиск {"\n"}предмета

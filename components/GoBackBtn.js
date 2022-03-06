@@ -3,10 +3,9 @@ import { stylePT } from "../styles/profilTeacher"
 import { FlatList, TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
 
-
-export default function GoBackBtn() {
+export default function GoBackBtn(props) {
     return(
-        <TouchableOpacity style={gStyle.wrapBack}>
+        <TouchableOpacity style={gStyle.wrapBack} onPress={()=>props.goBack()}>
             <Image
               source={require("../assets/backArrow.png")}
               style={{ width: 27, height: 24 }}

@@ -17,6 +17,7 @@ import ListSubjects from "./ListSubjects"
 import * as firebase from "firebase"
 
 export default function SeatchSubject(props) {
+  // console.log(props.navigation);
   const [findSubj, setFindSubj] = useState([])
   const [user, setUser] = useState(props.route.params.user)
   let groups = []
@@ -35,14 +36,11 @@ export default function SeatchSubject(props) {
   }
 
   const searchChangeHandler = (e) => {
-    e.trim() === "" || e === " "
-      ? setFindSubj([])
-      : setFindSubj(
-          groups.filter((item) =>
-            item.name.toLowerCase().includes(e.trim().toLowerCase())
+    e.trim() === "" ? setFindSubj([]) : setFindSubj(groups.filter((item) =>item.name.toLowerCase().includes(e.trim().toLowerCase())
           )
         )
   }
+  
 
   return (
     <View style={gStyle.container}>
@@ -53,7 +51,7 @@ export default function SeatchSubject(props) {
         end={{ x: 0, y: -1 }}
       >
         <Header user={user} />
-        <GoBackBtn />
+        <GoBackBtn goBack={()=>props.navigation.goBack()}/>
 
         <View style={styleSS.wrap}>
           <TextInput
@@ -65,7 +63,7 @@ export default function SeatchSubject(props) {
           <Text style={[gStyle.H4, styleSS.searchText]}>
             Вот что удалось найти:
           </Text>
-          <ListSubjects data={findSubj} theme="light" />
+          <ListSubjects data={findSubj} navigate={(item)=>props.navigation.navigate('ProfilSubject',{item,user})} theme="light" />
         </View>
       </LinearGradient>
     </View>

@@ -93,7 +93,7 @@ export default function Login(props) {
             <View style={[stylePers.persLevels, stylePers.wrapSearch]}>
               <Pressable style={stylePers.wrapSearchTeacher} onPress={onPressHandler}>
                 <Text style={stylePers.searchTeacherText}>
-                  Список{"\n"}преподавателей
+                  Список{"\n"}{user?.isTeach ? 'студентов' : 'преподавателей'}
                 </Text>
                 <Image
                   source={require("../assets/magnifier.png")}

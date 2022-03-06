@@ -1,13 +1,34 @@
 import { Text, View, Image, Pressable,TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
-import { useState } from "react"
+import { useState, useEffect} from "react"
 import { stylePS } from "../styles/profilSubject"
 import { Button, FlatList, TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
 import GoBackBtn from "./GoBackBtn"
 import Header from "./Header"
-export default function ProfilSubject() {
+import * as firebase from "firebase"
+
+export default function ProfilSubject(props) {
+  const [user,setUser]=useState(props.route.params.user)
+  const [item,setItem]=useState(props.route.params.item)
+  const [teacher,setTeacher]=useState({})
+
+  useEffect(()=>{
+const teachersRef = firebase.database().ref("teachers/")
+    teachersRef
+      .orderByChild("id")
+      .equalTo(item.id_teach)
+      .on("child_added", function (data) {
+        setTeacher(data.val());
+
+      })
+  },[])
+    
+       console.log(teacher);
+
+
   return (
+
     <View style={gStyle.container}>
       <LinearGradient
         colors={["#3F70A8", "#4B84C5", "#4F8BD0"]}
@@ -15,18 +36,18 @@ export default function ProfilSubject() {
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: -1 }}
       >
-        <Header />
-        <GoBackBtn />
-
+        <Header user={user}/>
+        <GoBackBtn goBack={()=>props.navigation.goBack()}/>
+{/* Добавить вместо слов переменные из props */}
         <View style={stylePS.wrap}>
           <Text style={[gStyle.H3, stylePS.nameSubject]}>
-            Периферийные устройства
+           {item.name}
           </Text>
           <View style={stylePS.infoSubject}>
             <View style={stylePS.wrapRow}>
               <Text style={stylePS.character}>Преподаватель: </Text>
               <Text style={[stylePS.value, stylePS.valueTeacher]}>
-                Парецких Е.В.
+               {teacher.short_name}
               </Text>
             </View>
             <View style={stylePS.wrapRow}>

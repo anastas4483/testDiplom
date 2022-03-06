@@ -16,6 +16,7 @@ import React from "react"
 import { useNavigation } from "@react-navigation/core"
 
 import { UserContext } from "../hooks/UserContext"
+import Loading from "./Loading"
 export default function Login(props) {
   const navigation = useNavigation()
 
@@ -144,13 +145,7 @@ export default function Login(props) {
     )
   } else {
     return (
-      <View style={gStyle.wrapLoading}>
-        <Image
-          source={require("../assets/loading.gif")}
-          style={gStyle.loading}
-        />
-        <Text>Ждем, пока все загрузится...</Text>
-      </View>
+      <Loading/>
     )
   }
 }

@@ -41,7 +41,7 @@ console.log(teacher);
             <View style={stylePS.infoSubject}>
               <View style={stylePS.wrapRow}>
                 <Text style={stylePS.character}>Преподаватель: </Text>
-                <TouchableOpacity onPress={()=>props.navigation.navigate('ProfilTeacher',{teacher})}>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('ProfilTeacher',{teacher,user})}>
                   <Text style={[stylePS.value, stylePS.valueTeacher]}>
                   {teacher.short_name}
                 </Text>

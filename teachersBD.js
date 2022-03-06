@@ -5,7 +5,8 @@ const teachersBD = [
     full_name: "Парецких Елена Викторовна",
     login: 'PareckihEV',
     pass: '123456',
-    isTeach: true
+    isTeach: true,
+    email: 'elenaparetskih@gmail.com'
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ const teachersBD = [
     full_name: "Халанский Роман Владимирович",
     login: 'HalanskiiRV',
     pass: '123456',
-    isTeach: true
+    isTeach: true,
+    email: 'halan55RV@gmail.com'
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ const teachersBD = [
     full_name: "Фомин Роман Викторович",
     login: 'FominRV',
     pass: '123456',
-    isTeach: true
+    isTeach: true,
+    email: 'FomaRoman@gmail.com'
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ const teachersBD = [
     full_name: "Надеева Ирина Александровна",
     login: 'NadeevaIA',
     pass: '123456',
-    isTeach: true
+    isTeach: true,
+    email: 'nadeevaHope@gmail.com'
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ const teachersBD = [
     full_name: "Котов Евгений Владимирович",
     login: 'KotovEV',
     pass: '123456',
-    isTeach: true
+    isTeach: true,
+    email: 'kotov@gmail.com'
   },
 ]
 

@@ -49,7 +49,6 @@ export default function Login(props) {
   useEffect(() => {
     //  if(!localStorage.getItem('user')) navigation.navigate('Login')
     getData().then((thing) => {
-      console.log("Aync", thing)
       if (thing !== undefined && !user) {
         setUser(thing)
       }

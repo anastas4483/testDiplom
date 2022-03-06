@@ -52,11 +52,11 @@ const teachersRef = firebase.database().ref("teachers/")
             </View>
             <View style={stylePS.wrapRow}>
               <Text style={stylePS.character}>Продолжительность:</Text>
-              <Text style={stylePS.value}>180ч</Text>
+              <Text style={stylePS.value}>{item.duration}ч</Text>
             </View>
             <View style={stylePS.wrapRow}>
               <Text style={stylePS.character}>Тип сдачи: </Text>
-              <Text style={stylePS.value}>экзамен</Text>
+              <Text style={stylePS.value}>{item.type_of_delivery}</Text>
             </View>
             <View style={stylePS.timetable}>
               <Text style={stylePS.timetableTitle}>График занятий</Text>

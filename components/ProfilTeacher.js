@@ -8,6 +8,7 @@ import ListSubjects from "./ListSubjects"
 import GoBackBtn from "./GoBackBtn"
 import Header from "./Header"
 export default function ProfilTeacher(props) {
+  // Если student, то в разделе "Ваши дисциплины" высвечиваются общие предметы препода и ученика. Если как teacher, то все его предметы.
   return (
     <View style={gStyle.container}>
       <LinearGradient
@@ -16,7 +17,7 @@ export default function ProfilTeacher(props) {
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: -1 }}
       >
-        <Header/> 
+        {/* <Header/>  */}
         <GoBackBtn/>
         <View style={stylePT.wrap}>
          

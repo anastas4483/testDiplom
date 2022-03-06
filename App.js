@@ -79,6 +79,12 @@ export default class App extends React.Component {
                 component={ProfilSubject}
                 // initialParams={{'addUser': this.addUser}}
               />
+              <Stack.Screen
+              name="ProfilTeacher"
+              options={{ headerShown: false }}
+              component={ProfilTeacher}
+              // initialParams={{'addUser': this.addUser}}
+            />
             </Stack.Navigator>
           </NavigationContainer>
         </UserContext.Provider>

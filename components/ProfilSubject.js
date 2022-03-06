@@ -24,8 +24,7 @@ export default function ProfilSubject(props) {
       })
   }, [])
 
-  console.log(teacher)
-
+console.log(teacher);
   if (teacher && item) {
     return (
       <View style={gStyle.container}>
@@ -37,13 +36,12 @@ export default function ProfilSubject(props) {
         >
           <Header user={user} />
           <GoBackBtn goBack={() => props.navigation.goBack()} />
-          {/* Добавить вместо слов переменные из props */}
           <View style={stylePS.wrap}>
             <Text style={[gStyle.H3, stylePS.nameSubject]}>{item.name}</Text>
             <View style={stylePS.infoSubject}>
               <View style={stylePS.wrapRow}>
                 <Text style={stylePS.character}>Преподаватель: </Text>
-                <TouchableOpacity onPress={()=>console.log(2)}>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('ProfilTeacher',{teacher})}>
                   <Text style={[stylePS.value, stylePS.valueTeacher]}>
                   {teacher.short_name}
                 </Text>

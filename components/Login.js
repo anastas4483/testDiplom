@@ -75,7 +75,6 @@ await props.route.params.addUser(user)
         .orderByChild("login")
         .equalTo(login)
         .on("child_added", function (data) {
-          console.log("Start at filter: " + data.val().name)
           if (data.val().pass === pass)  signIn(data.val())
 
         })
@@ -87,7 +86,6 @@ await props.route.params.addUser(user)
         .orderByChild("login")
         .equalTo(login)
         .on("child_added", function (data) {
-          console.log("Start at filter: " + data.val().full_name)
           if (data.val().pass === pass) signIn(data.val())
           // if (data.val().pass === pass) console.log(data.val())
         })

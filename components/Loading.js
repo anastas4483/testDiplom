@@ -8,12 +8,12 @@ import {
 
 export default function Loading(props) {
    return(
-       <View style={gStyle.wrapLoading}>
+       <View style={props.size? '' : gStyle.wrapLoading}>
         <Image
           source={require("../assets/loading.gif")}
-          style={gStyle.loading}
+          style={[gStyle.loading, props.size? props.size :'']}
         />
-        <Text>Ждем, пока все загрузится...</Text>
+        {/* <Text>Ждем, пока все загрузится...</Text> */}
       </View>
    ) 
 }

@@ -42,7 +42,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     // console.log(localStorage.getItem('user'))
-    this.getData().then(thing=>console.log('Aync',thing))  // сохранили user в AsyncStorage. Зачем? лучше использовать контекст
+    // this.getData().then(thing=>console.log('Aync',thing))  // сохранили user в AsyncStorage. Зачем? лучше использовать контекст
 
   }
 

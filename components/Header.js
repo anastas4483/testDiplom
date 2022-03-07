@@ -8,7 +8,6 @@ import { useState } from "react"
 
 export default function Header(props) {
   const navigation=useNavigation()
-//  console.log(props.user)
   const [name,setName]=useState(props.user?.isTeach ? props.user.full_name.split(' ')[1] : props.user.name.split(' ')[1])
 
  

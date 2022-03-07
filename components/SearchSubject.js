@@ -8,7 +8,7 @@ import {
   FlatList,
 } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { styleSS } from "../styles/searchSubject"
 import { gStyle } from "../styles/gStyle"
 import GoBackBtn from "./GoBackBtn"
@@ -21,6 +21,7 @@ export default function SeatchSubject(props) {
   const [findSubj, setFindSubj] = useState([])
   const [user, setUser] = useState(props.route.params.user)
   let groups = []
+
 
   if (!user.isTeach) {
     const studentsRef = firebase.database().ref("subjects/")
@@ -35,8 +36,13 @@ export default function SeatchSubject(props) {
     })
   }
 
+  useEffect(()=>{
+setFindSubj(groups)
+  },[])
+
   const searchChangeHandler = (e) => {
-    e.trim() === "" ? setFindSubj([]) : setFindSubj(groups.filter((item) =>item.name.toLowerCase().includes(e.trim().toLowerCase())
+    // e.trim() === "" ? setFindSubj([]) :
+     setFindSubj(groups.filter((item) =>item.name.toLowerCase().includes(e.trim().toLowerCase())
           )
         )
   }

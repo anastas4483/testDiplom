@@ -25,7 +25,8 @@ export const stylePT = StyleSheet.create({
     },
     wrapNamePhoto:{
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     wrapContacts:{
         marginLeft: 10
@@ -40,9 +41,10 @@ export const stylePT = StyleSheet.create({
     },
     wrapSoc:{
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         width: '40%',
-        marginTop: 6
+        marginTop: 6,
+        // paddingHorizontal: 5
     },
     SubjectsWrap:{
         borderTopColor: '#bbb',

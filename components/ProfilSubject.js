@@ -24,7 +24,6 @@ export default function ProfilSubject(props) {
       })
   }, [])
 
-console.log(teacher);
   if (teacher && item) {
     return (
       <View style={gStyle.container}>

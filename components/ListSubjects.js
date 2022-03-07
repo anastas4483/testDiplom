@@ -10,7 +10,6 @@ import { useState } from "react"
 import { gStyle } from "../styles/gStyle"
 import { stylePT } from "../styles/profilTeacher"
 export default function ListSubjects(props) {
-  console.log(props)
   const list1 = [1, 2, 3, 4]
   return (
     <FlatList

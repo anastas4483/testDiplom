@@ -90,7 +90,7 @@ export const stylePers = StyleSheet.create({
     height: 77,
     borderRadius: 20,
     paddingVertical: 15,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     textAlign: "left",
   },
   wrapCabinet: {

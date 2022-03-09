@@ -103,7 +103,7 @@ export default function Login(props) {
               <Pressable onPress={()=> navigation.navigate('SearchSubject', {user})} style={stylePers.wrapSearchObject}>
                 {/* <View  > */}
                 <Text style={stylePers.searchTeacherText}>
-                  Поиск {"\n"}предмета
+                  Список {"\n"}предметов
                 </Text>
                 <Image
                   source={require("../assets/magnifier.png")}

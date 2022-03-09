@@ -53,17 +53,21 @@ export default function SeatchSubject(props) {
         end={{ x: 0, y: -1 }}
       >
         <Header user={user} />
+        <View>
+        <View style={styleSS.wrapSearchBack}>
         <GoBackBtn goBack={() => props.navigation.goBack()} />
-
-        <View style={styleSS.wrap}>
-          <TextInput
+        <TextInput
             style={styleSS.searchInput}
             placeholder="Поиск дисциплины..."
             placeholderTextColor="#B1CBE8"
             onChangeText={searchChangeHandler}
           />
+        </View>
+
+        <View style={styleSS.wrap}>
+          
           <Text style={[gStyle.H4, styleSS.searchText]}>
-            Вот что удалось найти:
+            Список предметов:
           </Text>
           <ListSubjects
             data={findSubj}
@@ -73,6 +77,8 @@ export default function SeatchSubject(props) {
             theme="light"
           />
         </View>
+        </View>
+       
       </LinearGradient>
     </View>
   )

@@ -10,7 +10,6 @@ import { useState } from "react"
 import { gStyle } from "../styles/gStyle"
 import { stylePT } from "../styles/profilTeacher"
 export default function ListSubjects(props) {
-  const list1 = [1, 2, 3, 4]
   return (
     <FlatList
       data={props.data}
@@ -29,7 +28,7 @@ export default function ListSubjects(props) {
                   : { color: "#423333" },
               ]}
             >
-              {item.name}
+              {item.short_name ? item.short_name : item.name}
             </Text>
           </View>
         </TouchableOpacity>

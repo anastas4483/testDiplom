@@ -104,5 +104,9 @@ export const gStyle = StyleSheet.create({
 flex: 1,
 alignItems: 'center',
 justifyContent: 'center',
+  },
+
+  wrapperPadding:{
+    paddingHorizontal: 20,
   }
 })

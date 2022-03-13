@@ -91,16 +91,24 @@ export default function Login(props) {
               </Pressable>
             </View>
             <View style={[stylePers.persLevels, stylePers.wrapSearch]}>
-              <Pressable style={stylePers.wrapSearchTeacher} onPress={onPressHandler}>
+              <Pressable
+                style={stylePers.wrapSearchTeacher}
+                onPress={() => navigation.navigate("SearchPeople", { user })}
+                // style={stylePers.wrapSearchObject}
+              >
                 <Text style={stylePers.searchTeacherText}>
-                  Список{"\n"}{user?.isTeach ? 'студентов' : 'преподавателей'}
+                  Список{"\n"}
+                  {user?.isTeach ? "студентов" : "преподавателей"}
                 </Text>
                 <Image
                   source={require("../assets/magnifier.png")}
                   style={stylePers.searchMagnifier}
                 />
               </Pressable>
-              <Pressable onPress={()=> navigation.navigate('SearchSubject', {user})} style={stylePers.wrapSearchObject}>
+              <Pressable
+                onPress={() => navigation.navigate("SearchSubject", { user })}
+                style={stylePers.wrapSearchObject}
+              >
                 {/* <View  > */}
                 <Text style={stylePers.searchTeacherText}>
                   Список {"\n"}предметов
@@ -109,9 +117,8 @@ export default function Login(props) {
                   source={require("../assets/magnifier.png")}
                   style={stylePers.searchMagnifier}
                 />
-              {/* </View> */}
+                {/* </View> */}
               </Pressable>
-              
             </View>
             <View style={[stylePers.persLevels, stylePers.wrapCabinet]}>
               <ImageBackground
@@ -143,8 +150,6 @@ export default function Login(props) {
       </View>
     )
   } else {
-    return (
-      <Loading/>
-    )
+    return <Loading />
   }
 }

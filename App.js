@@ -20,6 +20,7 @@ import PersRoom from "./components/Home"
 import ProfilTeacher from "./components/ProfilTeacher"
 import ProfilSubject from "./components/ProfilSubject"
 import SeatchSubject from "./components/SearchSubject"
+import SearchPeople from "./components/SearchPeople"
 import base from "./base"
 // const UserContext = React.createContext("")
 
@@ -83,6 +84,12 @@ export default class App extends React.Component {
               name="ProfilTeacher"
               options={{ headerShown: false }}
               component={ProfilTeacher}
+              // initialParams={{'addUser': this.addUser}}
+            />
+            <Stack.Screen
+              name="SearchPeople"
+              options={{ headerShown: false }}
+              component={SearchPeople}
               // initialParams={{'addUser': this.addUser}}
             />
             </Stack.Navigator>

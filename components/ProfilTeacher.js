@@ -51,7 +51,6 @@ export default function ProfilTeacher(props) {
         })
     }
   }, [])
-
   return (
     <View style={gStyle.container}>
       <LinearGradient

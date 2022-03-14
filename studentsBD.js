@@ -26,7 +26,7 @@ const studentsBD = [
     {
         id: 4,
         name: 'Глушаченков Валерий',
-        id_group: 1,
+        id_group: 2,
         login: 'ksk181GV',
         pass: '123456'
 
@@ -34,7 +34,7 @@ const studentsBD = [
     {
         id: 5,
         name: 'Клинчук Денис',
-        id_group:1,
+        id_group:3,
         login: 'ksk181KD',
         pass: '123456'
 

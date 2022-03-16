@@ -92,6 +92,7 @@ export default class App extends React.Component {
               component={SearchPeople}
               // initialParams={{'addUser': this.addUser}}
             />
+           
             </Stack.Navigator>
           </NavigationContainer>
         </UserContext.Provider>

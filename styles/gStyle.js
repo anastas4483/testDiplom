@@ -38,6 +38,12 @@ export const gStyle = StyleSheet.create({
     fontFamily: "sansat_reg",
   },
 
+  H5: {
+    fontSize: 18,
+    color: "#D1E7FF",
+    fontFamily: "os_reg",
+  },
+
   circle: {
     position: "absolute",
     backgroundColor: "#90ACCD",
@@ -68,7 +74,7 @@ export const gStyle = StyleSheet.create({
     paddingHorizontal: 10,
     top: 0,
     alignItems: "center",
-    marginBottom: 28
+    marginBottom: 28,
   },
 
   headerGear: {
@@ -79,34 +85,53 @@ export const gStyle = StyleSheet.create({
   wrapBack: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: '#E9E9E9',
+    backgroundColor: "#E9E9E9",
     borderRadius: 20,
     width: 110,
     height: 40,
     padding: 10,
     elevation: 8,
-    marginLeft: 20
-    
+    marginLeft: 20,
   },
   BackText: {
     fontFamily: "os_reg",
     fontSize: 16,
-    color: '#7A7A7A',
+    color: "#7A7A7A",
     marginLeft: 5,
   },
-  loading:{
+  loading: {
     width: 200,
     height: 200,
-    
-
   },
-  wrapLoading:{
-flex: 1,
-alignItems: 'center',
-justifyContent: 'center',
+  wrapLoading: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 
-  wrapperPadding:{
+  wrapperPadding: {
     paddingHorizontal: 20,
-  }
+  },
+  listText: {
+    fontFamily: "os_reg",
+    fontSize: 17,
+    color: "#423333",
+    padding: 5,
+    fontStyle: "italic",
+    textDecorationLine: "underline",
+  },
+  listItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+  listDot: {
+    color: "#999494",
+    fontSize: 28,
+  },
+  listArrow: {
+    color: "#423333",
+    fontSize: 20,
+    fontStyle: "normal",
+  },
 })

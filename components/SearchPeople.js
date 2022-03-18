@@ -27,10 +27,9 @@ export default function SeatchPeople(props) {
   }
   const getStudents = () => {
     const studentsRef = firebase.database().ref(`students/`)
-    studentsRef
-      .on("value", function (data) {
-        setStudents(data.val().filter((item) => item))
-      })
+    studentsRef.on("value", function (data) {
+      setStudents(data.val().filter((item) => item))
+    })
   }
 
   const getGroups = () => {
@@ -70,15 +69,8 @@ export default function SeatchPeople(props) {
     })
   }
 
-  const createTitle = () => {
-    if (user?.isTeach) {
-      if (students.length > 0) return "Список студентов"
-      else if (groups.length > 0 && students.length <= 0)
-        return "Выберите группу"
-    } else {
-      return "Список преподавателей"
-    }
-  }
+  const createTitle = () =>
+    user?.isTeach ? "Список студентов" : "Список преподавателей"
 
   useEffect(() => {
     if (user?.isTeach) {

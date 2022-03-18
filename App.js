@@ -22,6 +22,7 @@ import ProfilSubject from "./components/ProfilSubject"
 import SeatchSubject from "./components/SearchSubject"
 import SearchPeople from "./components/SearchPeople"
 import base from "./base"
+import Tasks from "./components/Tasks"
 // const UserContext = React.createContext("")
 
 export default class App extends React.Component {
@@ -90,6 +91,12 @@ export default class App extends React.Component {
               name="SearchPeople"
               options={{ headerShown: false }}
               component={SearchPeople}
+              // initialParams={{'addUser': this.addUser}}
+            />
+            <Stack.Screen
+              name="Tasks"
+              options={{ headerShown: false }}
+              component={Tasks}
               // initialParams={{'addUser': this.addUser}}
             />
            

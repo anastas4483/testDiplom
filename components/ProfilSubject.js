@@ -2,7 +2,6 @@ import { Text, View, Image, Pressable, TouchableOpacity } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState, useEffect } from "react"
 import { stylePS } from "../styles/profilSubject"
-import { Button, FlatList, TextInput } from "react-native-web"
 import { gStyle } from "../styles/gStyle"
 import GoBackBtn from "./GoBackBtn"
 import Header from "./Header"
@@ -81,7 +80,7 @@ export default function ProfilSubject(props) {
               </View>
               <TouchableOpacity
                 style={stylePS.button}
-                onPress={() => console.log("ff")}
+                onPress={()=>props.navigation.navigate('Tasks',{user})}
               >
                 <Text style={stylePS.buttonText}>перейти в радел заданий</Text>
               </TouchableOpacity>

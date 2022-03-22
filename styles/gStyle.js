@@ -110,7 +110,9 @@ export const gStyle = StyleSheet.create({
   },
 
   wrapperPadding: {
-    paddingHorizontal: 20,
+    // paddingHorizontal: 20,
+    paddingLeft: 20,
+    paddingRight: 20
   },
   listText: {
     fontFamily: "os_reg",

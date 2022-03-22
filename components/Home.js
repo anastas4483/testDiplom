@@ -5,6 +5,7 @@ import {
   Pressable,
   ImageBackground,
   AsyncStorage,
+  TouchableOpacity,
 } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { useEffect, useState, useContext } from "react"
@@ -69,7 +70,7 @@ export default function Login(props) {
 
           <View style={stylePers.persWrap}>
             <View style={[stylePers.persNots, stylePers.persLevels]}>
-              <View style={stylePers.persNotsList}></View>
+              <View style={stylePers.persNotsList} />
               <Pressable
                 onPress={() => console.log("mfsm")}
                 style={stylePers.persNotsWrapButton}
@@ -129,7 +130,12 @@ export default function Login(props) {
                   stylePers.persBGImage,
                 ]}
               >
-                <View style={stylePers.wrapSearchCabinet}>
+                <TouchableOpacity
+                  onPress={() =>
+                    props.navigation.navigate("FloorMap", { user })
+                  }
+                  style={stylePers.wrapSearchCabinet}
+                >
                   <Text style={stylePers.WhereCabinet}>
                     Где этот кабинет? :о
                   </Text>
@@ -138,12 +144,15 @@ export default function Login(props) {
                     source={require("../assets/mapPin.png")}
                     style={stylePers.mapImg}
                   />
-                </View>
+                </TouchableOpacity>
               </ImageBackground>
             </View>
 
             <View style={[gStyle.circle, stylePers.wrapFAQ]}>
-              <Text style={stylePers.textFAQ}> FAQ</Text>
+              <Image
+                source={require("../assets/shedule.png")}
+                style={stylePers.FAQImg}
+              />
             </View>
           </View>
         </LinearGradient>

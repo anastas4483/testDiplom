@@ -7,7 +7,7 @@ import { LogBox } from "react-native"
 import setFonts from "./hooks/setFonts"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import {UserContext} from './hooks/UserContext'
+import { UserContext } from "./hooks/UserContext"
 
 import React from "react"
 
@@ -23,21 +23,23 @@ import SeatchSubject from "./components/SearchSubject"
 import SearchPeople from "./components/SearchPeople"
 import base from "./base"
 import Tasks from "./components/Tasks"
+import { ZoomPhoto } from "./components/ZoomPhoto"
+import { FloorMap } from "./components/FloorMap"
 // const UserContext = React.createContext("")
 
 export default class App extends React.Component {
   // static contextType = ThemeContext;
   state = {
     font: false,
-    user: {}
+    user: {},
     // fonts: ''
   }
 
-   getData = async () => {
+  getData = async () => {
     try {
-      const jsonValue = await AsyncStorage.getItem('@user')
-      return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch(e) {
+      const jsonValue = await AsyncStorage.getItem("@user")
+      return jsonValue != null ? JSON.parse(jsonValue) : null
+    } catch (e) {
       // error reading value
     }
   }
@@ -45,11 +47,10 @@ export default class App extends React.Component {
   componentDidMount() {
     // console.log(localStorage.getItem('user'))
     // this.getData().then(thing=>console.log('Aync',thing))  // сохранили user в AsyncStorage. Зачем? лучше использовать контекст
-
   }
 
-  addUser=async (user)=>{
-   await this.setState({user})
+  addUser = async (user) => {
+    await this.setState({ user })
   }
 
   render() {
@@ -67,39 +68,38 @@ export default class App extends React.Component {
                 name="Login"
                 options={{ headerShown: false }}
                 component={Login}
-                initialParams={{'addUser': this.addUser}}
+                initialParams={{ addUser: this.addUser }}
               />
               <Stack.Screen
                 name="SearchSubject"
                 options={{ headerShown: false }}
                 component={SeatchSubject}
-                // initialParams={{'addUser': this.addUser}}
               />
-               <Stack.Screen
+              <Stack.Screen
                 name="ProfilSubject"
                 options={{ headerShown: false }}
                 component={ProfilSubject}
-                // initialParams={{'addUser': this.addUser}}
               />
               <Stack.Screen
-              name="ProfilTeacher"
-              options={{ headerShown: false }}
-              component={ProfilTeacher}
-              // initialParams={{'addUser': this.addUser}}
-            />
-            <Stack.Screen
-              name="SearchPeople"
-              options={{ headerShown: false }}
-              component={SearchPeople}
-              // initialParams={{'addUser': this.addUser}}
-            />
-            <Stack.Screen
-              name="Tasks"
-              options={{ headerShown: false }}
-              component={Tasks}
-              // initialParams={{'addUser': this.addUser}}
-            />
-           
+                name="ProfilTeacher"
+                options={{ headerShown: false }}
+                component={ProfilTeacher}
+              />
+              <Stack.Screen
+                name="SearchPeople"
+                options={{ headerShown: false }}
+                component={SearchPeople}
+              />
+              <Stack.Screen
+                name="Tasks"
+                options={{ headerShown: false }}
+                component={Tasks}
+              />
+              <Stack.Screen
+                name="FloorMap"
+                options={{ headerShown: false }}
+                component={FloorMap}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </UserContext.Provider>

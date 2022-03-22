@@ -129,12 +129,11 @@ backgroundColor: "#fff",
     alignItems: 'center',
     justifyContent: 'flex-start',
     },
-    textFAQ:{
-      marginTop: 50,
-      marginRight: 140,
-      fontFamily: 'os_reg',
-      fontSize: 30,
-      color: '#000'
-
-    }
+   
+    FAQImg:{
+      width: 50,
+      height: 50,
+      marginTop: 37,
+      marginRight: 130,
+    },
 })

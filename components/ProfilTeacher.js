@@ -21,12 +21,15 @@ export default function ProfilTeacher(props) {
 
   let list = []
   useEffect(() => {
-    const storageRef = firebase.storage().ref().child(`${teacher.login}.jpg`)
+    const storageRef = firebase
+      .storage()
+      .ref()
+      .child(`${teacher.login}.jpg`)
     storageRef.getDownloadURL().then(
-      function (url) {
+      function(url) {
         setImageURL(url)
       },
-      function (error) {
+      function(error) {
         console.log(error)
       }
     )
@@ -35,7 +38,7 @@ export default function ProfilTeacher(props) {
       subjectsRef
         .orderByChild("id_teach")
         .equalTo(teacher.id)
-        .on("child_added", function (data) {
+        .on("child_added", function(data) {
           if (data.val().groups.some((item) => user.id_group == item)) {
             list.push(data.val())
             setListSubj(list)
@@ -45,7 +48,7 @@ export default function ProfilTeacher(props) {
       subjectsRef
         .orderByChild("id_teach")
         .equalTo(teacher.id)
-        .on("child_added", function (data) {
+        .on("child_added", function(data) {
           list.push(data.val())
           setListSubj(list)
         })

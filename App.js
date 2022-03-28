@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar"
-import { Platform, StyleSheet, Text, View } from "react-native"
+import { Text, View } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import { gStyle } from "./styles/login"
@@ -21,6 +21,7 @@ import ProfilTeacher from "./components/ProfilTeacher"
 import ProfilSubject from "./components/ProfilSubject"
 import SeatchSubject from "./components/SearchSubject"
 import SearchPeople from "./components/SearchPeople"
+import Shedule from "./components/Shedule"
 import base from "./base"
 import Tasks from "./components/Tasks"
 import { ZoomPhoto } from "./components/ZoomPhoto"
@@ -45,6 +46,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    // this.setState({ user: null })
     // console.log(localStorage.getItem('user'))
     // this.getData().then(thing=>console.log('Aync',thing))  // сохранили user в AsyncStorage. Зачем? лучше использовать контекст
   }
@@ -99,6 +101,11 @@ export default class App extends React.Component {
                 name="FloorMap"
                 options={{ headerShown: false }}
                 component={FloorMap}
+              />
+              <Stack.Screen
+                name="Shedule"
+                options={{ headerShown: false }}
+                component={Shedule}
               />
             </Stack.Navigator>
           </NavigationContainer>

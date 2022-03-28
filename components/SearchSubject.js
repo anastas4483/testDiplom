@@ -24,7 +24,7 @@ export default function SeatchSubject(props) {
   useEffect(() => {
     if (!user.isTeach) {
       const studentsRef = firebase.database().ref("subjects/")
-      studentsRef.on("child_added", function (data) {
+      studentsRef.on("child_added", function(data) {
         if (data.val().groups.some((item) => user.id_group == item))
           setAllSubj((subj) => {
             return [data.val(), ...subj]
@@ -32,7 +32,7 @@ export default function SeatchSubject(props) {
       })
     } else {
       const teachersRef = firebase.database().ref("subjects/")
-      teachersRef.on("child_added", function (data) {
+      teachersRef.on("child_added", function(data) {
         if (data.val().id_teach === user.id)
           setAllSubj((subj) => {
             return [data.val(), ...subj]
@@ -42,7 +42,15 @@ export default function SeatchSubject(props) {
   }, [])
   if (allSubj.length > 0 && !findSubj.length > 0) setFindSubj(allSubj)
 
-  const searchChangeHandler = (e) => {e.trim() === "" ? setFindSubj(allSubj) : setFindSubj(allSubj.filter((item) => item.name.toLowerCase().includes(e.trim().toLowerCase())))}
+  const searchChangeHandler = (e) => {
+    e.trim() === ""
+      ? setFindSubj(allSubj)
+      : setFindSubj(
+          allSubj.filter((item) =>
+            item.name.toLowerCase().includes(e.trim().toLowerCase())
+          )
+        )
+  }
 
   return (
     <View style={gStyle.container}>
@@ -54,31 +62,29 @@ export default function SeatchSubject(props) {
       >
         <Header user={user} />
         <View>
-        <View style={styleSS.wrapSearchBack}>
-        <GoBackBtn goBack={() => props.navigation.goBack()} />
-        <TextInput
-            style={styleSS.searchInput}
-            placeholder="Поиск дисциплины..."
-            placeholderTextColor="#B1CBE8"
-            onChangeText={searchChangeHandler}
-          />
-        </View>
+          <View style={styleSS.wrapSearchBack}>
+            <GoBackBtn goBack={() => props.navigation.goBack()} />
+            <TextInput
+              style={styleSS.searchInput}
+              placeholder="Поиск дисциплины..."
+              placeholderTextColor="#B1CBE8"
+              onChangeText={searchChangeHandler}
+            />
+          </View>
 
-        <View style={styleSS.wrap}>
-          
-          <Text style={[gStyle.H4, styleSS.searchText]}>
-            Список предметов:
-          </Text>
-          <ListSubjects
-            data={findSubj}
-            navigate={(item) =>
-              props.navigation.navigate("ProfilSubject", { item, user })
-            }
-            theme="light"
-          />
+          <View style={styleSS.wrap}>
+            <Text style={[gStyle.H4, styleSS.searchText]}>
+              Список предметов:
+            </Text>
+            <ListSubjects
+              data={findSubj}
+              navigate={(item) =>
+                props.navigation.navigate("ProfilSubject", { item, user })
+              }
+              theme="light"
+            />
+          </View>
         </View>
-        </View>
-       
       </LinearGradient>
     </View>
   )

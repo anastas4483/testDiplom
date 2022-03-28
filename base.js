@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
-import * as firebase from "firebase";
+import * as firebase from "firebase"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import subjectsBD from './subjectsBD'
+import studentsBD from "./studentsBD"
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBGIFs9pjMP3wcF0lShxbnGZ2Ypzv9wvew",
@@ -11,16 +11,16 @@ const firebaseConfig = {
   projectId: "diploma2022-22578",
   storageBucket: "diploma2022-22578.appspot.com",
   messagingSenderId: "931293933697",
-  appId: "1:931293933697:web:41912e80e71a32ef211d80"
-};
+  appId: "1:931293933697:web:41912e80e71a32ef211d80",
+}
 
 // Initialize Firebase
-let app;
-if (firebase.apps.length===0){
-  app=firebase.initializeApp(firebaseConfig);
-}else{
-  app=firebase.app()
-  // subjectsBD.forEach((item,index)=>   firebase.database().ref(`/subjects/${index+1}`).set(item))
+let app
+if (firebase.apps.length === 0) {
+  app = firebase.initializeApp(firebaseConfig)
+} else {
+  app = firebase.app()
+  // studentsBD.forEach((item,index)=>   firebase.database().ref(`/students/${index}`).set(item))
 }
-const auth=firebase.auth()
-export {auth}
+const auth = firebase.auth()
+export { auth }

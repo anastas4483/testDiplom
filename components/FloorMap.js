@@ -13,9 +13,6 @@ export const FloorMap = (props) => {
   const [user, setUser] = useState(props.route.params.user)
   const [selectedLanguage, setSelectedLanguage] = useState()
 
-
- 
-
   return (
     <View style={gStyle.container}>
       <LinearGradient
@@ -30,21 +27,21 @@ export const FloorMap = (props) => {
         <View style={styleFloorMap.wrap}>
           <Text style={styleFloorMap.text}>Показать карту</Text>
           <Picker
-          selectedValue={selectedLanguage}
-          style={[styleFloorMap.picker, {borderRadius: 20}]}
-          onValueChange={(itemValue, itemIndex) =>{
-            setSelectedLanguage(itemValue)
-            console.log(itemValue);}
-          }
-        >
-          <Picker.Item label="1 этажа" value="1" />
-          <Picker.Item label="2 этажа" value="2" />
-          <Picker.Item label="3 этажа" value="3" />
-          <Picker.Item label="4,5 этажей" value="4" />
-        </Picker>
+            selectedValue={selectedLanguage}
+            style={[styleFloorMap.picker, { borderRadius: 20 }]}
+            onValueChange={(itemValue, itemIndex) => {
+              setSelectedLanguage(itemValue)
+              console.log(itemValue)
+            }}
+          >
+            <Picker.Item label="1 этажа" value="1" />
+            <Picker.Item label="2 этажа" value="2" />
+            <Picker.Item label="3 этажа" value="3" />
+            <Picker.Item label="4,5 этажей" value="4" />
+          </Picker>
         </View>
-        
-        <ZoomPhoto numFloor={selectedLanguage}/>
+
+        <ZoomPhoto numFloor={selectedLanguage} />
         {/* </View> */}
       </LinearGradient>
     </View>

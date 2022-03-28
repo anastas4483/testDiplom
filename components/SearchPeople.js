@@ -20,14 +20,14 @@ export default function SeatchPeople(props) {
   const getSubjects = async () => {
     const teachersRef = firebase.database().ref("subjects/")
     const arr = []
-    await teachersRef.on("child_added", function (data) {
+    await teachersRef.on("child_added", function(data) {
       if (data.val().id_teach === user.id) arr.push(data.val().id)
     })
     setSubjsId(arr)
   }
   const getStudents = () => {
     const studentsRef = firebase.database().ref(`students/`)
-    studentsRef.on("value", function (data) {
+    studentsRef.on("value", function(data) {
       setStudents(data.val().filter((item) => item))
     })
   }
@@ -38,13 +38,13 @@ export default function SeatchPeople(props) {
     let arr = []
     subjs.forEach((subj) => {
       const subjectsRef = firebase.database().ref(`subjects/${subj}`)
-      subjectsRef.on("value", function (data) {
+      subjectsRef.on("value", function(data) {
         arr = arr.concat(data.val().groups)
       })
     })
     arr = [...new Set(arr.sort())]
     const groupsRef = firebase.database().ref(`groups`)
-    groupsRef.on("child_added", function (data) {
+    groupsRef.on("child_added", function(data) {
       if (arr.some((item) => data.val().id == item)) {
         setGroups((prev) => [data.val(), ...prev])
       }
@@ -54,7 +54,7 @@ export default function SeatchPeople(props) {
     const teachersRef = firebase.database().ref("subjects/")
     let arr = []
 
-    teachersRef.on("child_added", function (data) {
+    teachersRef.on("child_added", function(data) {
       if (data.val().groups.some((item) => user.id_group == item)) {
         arr.push(data.val().id_teach)
       }
@@ -64,7 +64,7 @@ export default function SeatchPeople(props) {
 
   const getTeachersObj = (id) => {
     const teachersRef = firebase.database().ref(`teachers/${id}`)
-    teachersRef.on("value", function (data) {
+    teachersRef.on("value", function(data) {
       setTeach((prev) => [...prev, data.val()])
     })
   }

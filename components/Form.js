@@ -1,5 +1,5 @@
 import { View, TextInput, Pressable, Text, Button } from "react-native"
-import Checkbox from 'expo-checkbox';
+import Checkbox from "expo-checkbox"
 import { LinearGradient } from "expo-linear-gradient"
 import AppLoading from "expo-app-loading"
 import * as Font from "expo-font"
@@ -22,17 +22,15 @@ export default function Form(props) {
         secureTextEntry
         placeholder="Ваш пароль"
       />
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: "row" }}>
         <Checkbox
-        color='#ccc'
+          color="#ccc"
           disabled={false}
           value={props.isSelected}
           onValueChange={props.setSelection}
-
         />
-        
-        <Text style={styleLogin.checkboxText}>Я преподаватель{'\n'}</Text> 
-       
+
+        <Text style={styleLogin.checkboxText}>Я преподаватель{"\n"}</Text>
       </View>
       <Pressable
         style={styleLogin.loginButton}
@@ -40,7 +38,6 @@ export default function Form(props) {
       >
         <Text style={styleLogin.loginButtonText}>Войти</Text>
       </Pressable>
-
     </View>
   )
 }

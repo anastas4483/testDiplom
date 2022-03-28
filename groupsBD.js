@@ -11,7 +11,6 @@ const groupsBD = [
     id: 3,
     name: "РАС-181оо",
   },
-  
 ]
 
 export default groupsBD

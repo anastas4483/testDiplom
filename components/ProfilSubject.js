@@ -18,7 +18,7 @@ export default function ProfilSubject(props) {
     teachersRef
       .orderByChild("id")
       .equalTo(item.id_teach)
-      .on("child_added", function (data) {
+      .on("child_added", function(data) {
         setTeacher(data.val())
       })
   }, [])
@@ -39,12 +39,18 @@ export default function ProfilSubject(props) {
             <View style={stylePS.infoSubject}>
               <View style={stylePS.wrapRow}>
                 <Text style={stylePS.character}>Преподаватель: </Text>
-                <TouchableOpacity onPress={()=>props.navigation.navigate('ProfilTeacher',{teacher,user})}>
+                <TouchableOpacity
+                  onPress={() =>
+                    props.navigation.navigate("ProfilTeacher", {
+                      teacher,
+                      user,
+                    })
+                  }
+                >
                   <Text style={[stylePS.value, stylePS.valueTeacher]}>
-                  {teacher.short_name}
-                </Text>
+                    {teacher.short_name}
+                  </Text>
                 </TouchableOpacity>
-                
               </View>
               <View style={stylePS.wrapRow}>
                 <Text style={stylePS.character}>Продолжительность:</Text>
@@ -80,7 +86,7 @@ export default function ProfilSubject(props) {
               </View>
               <TouchableOpacity
                 style={stylePS.button}
-                onPress={()=>props.navigation.navigate('Tasks',{user})}
+                onPress={() => props.navigation.navigate("Tasks", { user })}
               >
                 <Text style={stylePS.buttonText}>перейти в радел заданий</Text>
               </TouchableOpacity>
@@ -90,6 +96,6 @@ export default function ProfilSubject(props) {
       </View>
     )
   } else {
-    <Loading />
+    ;<Loading />
   }
 }

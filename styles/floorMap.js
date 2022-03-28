@@ -8,7 +8,6 @@ export const styleFloorMap = StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 20,
     marginBottom: 10,
-    // borderBottomColor: '#ff0',
     borderStyle: "solid",
     borderBottomWidth: 10,
     elevation: 3,
@@ -16,16 +15,16 @@ export const styleFloorMap = StyleSheet.create({
     width: "50%",
   },
   text: {
-      color: '#fff',
-      fontFamily: 'sansat_reg',
-      fontSize: 18
+    color: "#fff",
+    fontFamily: "sansat_reg",
+    fontSize: 18,
   },
   wrap: {
-      flex: 1,
-      flexDirection: 'row',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 'auto'
-  }
+    flex: 1,
+    flexDirection: "row",
+    alignContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "auto",
+  },
 })

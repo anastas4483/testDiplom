@@ -1,7 +1,6 @@
 import { StyleSheet, Platform } from "react-native"
 
 export const stylePers = StyleSheet.create({
-  
   persWrap: {
     justifyContent: "space-between",
     alignItems: "center",
@@ -11,7 +10,7 @@ export const stylePers = StyleSheet.create({
   persLevels: {
     width: "85%",
     marginHorizontal: "auto",
-    marginBottom: 40
+    marginBottom: 40,
   },
   persNots: {
     backgroundColor: "#91B1D7",
@@ -29,12 +28,10 @@ export const stylePers = StyleSheet.create({
     backgroundColor: "#91B1D7",
     borderRadius: 20,
     width: "80%",
-    // height: 175,
     marginHorizontal: "auto",
     flex: 7,
   },
   persNotsWrapButton: {
-    // backgroundImage: "url()",
     width: "100%",
     height: 50,
     flex: 2,
@@ -55,13 +52,10 @@ export const stylePers = StyleSheet.create({
     justifyContent: "center",
   },
   wrapSearch: {
-    // marginTop: 40,
     width: "85%",
-    // height: 175,
     marginHorizontal: "auto",
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-    // width: '100%'
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   wrapSearchTeacher: {
     backgroundColor: "#fff",
@@ -94,46 +88,45 @@ export const stylePers = StyleSheet.create({
     textAlign: "left",
   },
   wrapCabinet: {
-backgroundColor: "#fff",
+    backgroundColor: "#fff",
     width: "95%",
     height: 65,
     borderRadius: 20,
-    // paddingVertical: 0,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   wrapSearchCabinet: {
     paddingHorizontal: 20,
-     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
   },
-  openMap:{
-    fontFamily: 'os_reg',
+  openMap: {
+    fontFamily: "os_reg",
     fontSize: 13,
-    color: '#4579B5',
+    color: "#4579B5",
   },
-  WhereCabinet:{
-    color: '#000',
-    fontFamily: 'os_reg',
+  WhereCabinet: {
+    color: "#000",
+    fontFamily: "os_reg",
     fontSize: 17,
-    flex: 1
+    flex: 1,
   },
-  mapImg:{
+  mapImg: {
     width: 25,
-    height: 25
+    height: 25,
   },
-  wrapFAQ:{
-    position: 'absolute',
-    top: '120%',
-    left: '60%',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    },
-   
-    FAQImg:{
-      width: 50,
-      height: 50,
-      marginTop: 37,
-      marginRight: 130,
-    },
+  wrapFAQ: {
+    position: "absolute",
+    top: "120%",
+    left: "60%",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+
+  FAQImg: {
+    width: 50,
+    height: 50,
+    marginTop: 37,
+    marginRight: 130,
+  },
 })

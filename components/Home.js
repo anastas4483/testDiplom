@@ -22,10 +22,6 @@ export default function Login(props) {
   const navigation = useNavigation()
 
   const { userVal } = useContext(UserContext)
-  // console.log(userVal)
-  const onPressHandler = () => {
-    console.log("click")
-  }
   const [user, setUser] = useState(null)
   // const [isTeach,setIsTeach]=useState(props.route.params.isTeach)
 
@@ -147,12 +143,15 @@ export default function Login(props) {
                 </TouchableOpacity>
               </ImageBackground>
             </View>
-
             <View style={[gStyle.circle, stylePers.wrapFAQ]}>
-              <Image
-                source={require("../assets/shedule.png")}
-                style={stylePers.FAQImg}
-              />
+              <TouchableOpacity
+                onPress={() => props.navigation.navigate("Shedule", { user })}
+              >
+                <Image
+                  source={require("../assets/shedule.png")}
+                  style={stylePers.FAQImg}
+                />
+              </TouchableOpacity>
             </View>
           </View>
         </LinearGradient>

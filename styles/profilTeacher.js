@@ -1,17 +1,14 @@
 import { StyleSheet, Platform } from "react-native"
-import { G } from "react-native-svg"
 
 export const stylePT = StyleSheet.create({
   wrap: {
     paddingHorizontal: 20,
-    // paddingVertical: 10
   },
 
   wrapInfo: {
     backgroundColor: "#fff",
     borderRadius: 20,
     width: "100%",
-    // height: '75%',
     marginTop: 20,
     paddingVertical: 50,
     paddingHorizontal: 8,
@@ -41,7 +38,6 @@ export const stylePT = StyleSheet.create({
     justifyContent: "space-between",
     width: "40%",
     marginTop: 6,
-    // paddingHorizontal: 5
   },
   SubjectsWrap: {
     borderTopColor: "#bbb",

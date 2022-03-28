@@ -1,17 +1,14 @@
 import { StyleSheet, Platform } from "react-native"
-import { G } from "react-native-svg"
 
 export const gStyle = StyleSheet.create({
   container: {
     flex: 1,
-    //  paddingTop:20,
     alignItems: "center",
     justifyContent: "center",
   },
   gradient: {
     flex: 1,
     width: "100%",
-    // paddingTop: 20,
     top: 0,
     fontSize: 16,
     overflow: "hidden",
@@ -42,6 +39,7 @@ export const gStyle = StyleSheet.create({
     fontSize: 18,
     color: "#D1E7FF",
     fontFamily: "os_reg",
+    textAlign: "center",
   },
 
   circle: {
@@ -110,9 +108,8 @@ export const gStyle = StyleSheet.create({
   },
 
   wrapperPadding: {
-    // paddingHorizontal: 20,
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
   },
   listText: {
     fontFamily: "os_reg",
@@ -135,5 +132,14 @@ export const gStyle = StyleSheet.create({
     color: "#423333",
     fontSize: 20,
     fontStyle: "normal",
+  },
+  warn: {
+    color: "#D40000",
+    backgroundColor: "#86A6CC",
+    width: "100%",
+    textAlign: "center",
+    padding: 15,
+    fontSize: 15,
+    marginTop: 30,
   },
 })

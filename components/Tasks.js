@@ -24,8 +24,17 @@ const Tasks = (props) => {
             {tasks.length > 0 ? (
               console.log(tasks)
             ) : (
-              <View style={[{ width: '100%' ,height: '80%',justifyContent: 'center', alignItems: 'center'}]}>
-                <Text style={[gStyle.H5, ]}>Ура! На сегодня задач нет ✅</Text>
+              <View
+                style={[
+                  {
+                    width: "100%",
+                    height: "80%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  },
+                ]}
+              >
+                <Text style={[gStyle.H5]}>Ура! На сегодня задач нет ✅</Text>
               </View>
             )}
           </View>

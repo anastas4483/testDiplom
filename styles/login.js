@@ -1,9 +1,7 @@
 import { StyleSheet, Platform } from "react-native"
-import { G } from "react-native-svg"
 
 // if(Platform.OS==='web') styleLogin.loginInput['outlineWidth']=0
 export const styleLogin = StyleSheet.create({
-
   loginForm: {
     textAlign: "left",
     paddingHorizontal: 40,
@@ -12,7 +10,6 @@ export const styleLogin = StyleSheet.create({
   loginFormWrap: {
     marginHorizontal: "10%",
     width: "80%",
-
   },
   loginInput: {
     borderColor: "#fff",
@@ -29,7 +26,7 @@ export const styleLogin = StyleSheet.create({
   },
   loginButton: {
     height: 55,
-    width: '80%',
+    width: "80%",
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 12,
@@ -41,7 +38,7 @@ export const styleLogin = StyleSheet.create({
     shadowRadius: 0,
     shadowColor: "#28466A",
     shadowOffset: { height: 5, width: 0 },
-    marginHorizontal: '5%',
+    marginHorizontal: "5%",
     elevation: 5,
   },
   loginButtonText: {
@@ -61,7 +58,7 @@ export const styleLogin = StyleSheet.create({
     fontFamily: "sansat_light",
     textAlign: "right",
   },
- 
+
   loginCircleTop: {
     justifyContent: "center",
     alignItems: "center",
@@ -69,7 +66,6 @@ export const styleLogin = StyleSheet.create({
     left: Platform.OS === "web" ? "75%" : "50%",
   },
   loginCircleBottom: {
-    // position: 'absolute',
 
     top: Platform.OS === "web" ? "65%" : 600,
     left: Platform.OS === "web" ? "-30%" : "-45%",
@@ -80,29 +76,28 @@ export const styleLogin = StyleSheet.create({
     left: "-18%",
   },
 
-  loginCopy:{
-    flex:1,
-    alignItems:'flex-start',
-    justifyContent: 'space-around',
-    textAlign:'right',
-    textAlignVertical:'bottom',
-    paddingBottom:10,
+  loginCopy: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "space-around",
+    textAlign: "right",
+    textAlignVertical: "bottom",
+    paddingBottom: 10,
     paddingRight: 20,
     fontSize: 13,
     color: "#fff",
     fontFamily: "sansat_light",
     textAlign: "right",
   },
-  loginWrapBottom:{
-    width: '100%',
-    height: '100%'
-  
+  loginWrapBottom: {
+    width: "100%",
+    height: "100%",
   },
-  checkboxText:{
-    color: '#B1CBE8',
+  checkboxText: {
+    color: "#B1CBE8",
     marginLeft: 10,
     marginBottom: 20,
-    fontFamily: 'os_reg',
-    fontSize: 16
-  }
+    fontFamily: "os_reg",
+    fontSize: 16,
+  },
 })
